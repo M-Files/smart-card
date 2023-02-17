@@ -1,5 +1,7 @@
 # M-Files Smart Card
 
+**Note: This repository contains sample code that is not supported by M-Files.  It is for reference only.**
+
 ## Strong-named keys
 https://docs.microsoft.com/en-us/dotnet/standard/assembly/strong-named
 MFilesSmartCard\src\shared\SharedLibStrongNameKey.snk
