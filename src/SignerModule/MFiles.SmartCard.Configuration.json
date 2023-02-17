@@ -1,0 +1,63 @@
+﻿{
+  // Specifies whether the feature is enabled or not.
+  "Enabled": false,
+
+  // Settings for defining the authentication requirements.
+  "Authentication": {
+
+    // List of allowed authentication types.
+    // See the M-Files API documentation for 'MFAuthType'.
+    // 1 = Windows authentication with the current user credentials.
+    // 2 = Windows authentication (user needs to specify the credentials).
+    // 3 = M-Files authentication (user needs to specify the credentials).
+    "AllowedAuthenticationTypes": [ 1, 2 ],
+
+    // A list of workflow states requiring smart card authentication. The workflow states are defined with aliases, such as "State.Approved".
+    "RequiredForStates": [],
+
+    // A list of workflow state transitions doing signature in PDF with smart card authentication.
+    // The state transitions are defined with aliases, such as "StateTransition.SignPDF".
+    "SignPDFForStateTransitions": [],
+
+    // A description of the certificates used in the authentication. First matching certificate is used for signing.
+    "Certificates": [
+      {
+
+        // Specifies the certificate authority that has issued the certificate.
+        "IssuedBy": "",
+
+        // The key usage purpose of the certificate.
+        // See the documentation of the 'X509KeyUsageFlags' enumeration for allowed values. Only one value is allowed.
+        // Direct link: http://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509keyusageflags%28v=vs.110%29.aspx
+        "KeyUsage": "NonRepudiation",
+
+        // The subject of the certificate as identified via an RFC822 name or an alternative subject name.
+        "SubjectRfc822Name": {
+
+          // The RFC822 name.
+          // The following placeholders are supported: "accountName" and "username". A placeholder is specified as "${<name of the placeholder>}".
+          "Value": "${username}@m-files.com"
+        }
+      },
+      {
+
+        // Specifies the certificate authority that has issued the certificate.
+        "IssuedBy": "",
+
+        // The key usage purpose of the certificate.
+        // See the documentation of the 'X509KeyUsageFlags' enumeration for allowed values. Only one value is allowed.
+        // Direct link: http://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509keyusageflags%28v=vs.110%29.aspx
+        "KeyUsage": "NonRepudiation",
+
+        // The subject of the certificate as identified via an RFC822 name or an alternative subject name.
+        "SubjectRfc822Name": {
+
+          // The RFC822 name.
+          // The following placeholders are supported: "accountName" and "username". A placeholder is specified as "${<name of the placeholder>}".
+          "Value": "${username}@m-files.com"
+        }
+      }
+    ]
+  }
+}
+

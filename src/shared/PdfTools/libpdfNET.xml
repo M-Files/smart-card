@@ -1,0 +1,2039 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>libpdfNET</name>
+    </assembly>
+    <members>
+        <member name="F:Pdftools.Pdf.PDFRecoveryOption.eRecoverXREF">
+            <summary>
+            Recover XREF table. Useful if processing a document takes too long,
+            since repairing the cross-reference table is very time consuming.
+            </summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFRecoveryOption.eRecoverPages">
+            <summary>
+            If pages are not part of the page tree (loose pages),
+            they will be recovered and added at the end of the document.
+            Skipping this option will remove these pages from the document.
+            </summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFRecoveryOption.eRecoverImages">
+            <summary>
+            Try to recover images of a PDF document if the document cannot be repaired.
+            </summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFFontType.eFontType1">
+            <summary>PostScript Type1 font program.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFFontType.eFontTrueType">
+            <summary>TrueType font program.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFFontType.eFontCFF">
+            <summary>PostScript Compact Font Format (CFF) font program.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFFontType.eFontType3">
+            <summary>PDF font program.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripThreads">
+            <summary>Remove Thread, Bead dictionaries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripMetadata">
+            <summary>Remove Metadata dictionaries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripPieceInfo">
+            <summary>PieceInfo dictionaries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripStructTree">
+            <summary>StructTree dictionaries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripThumb">
+            <summary>Thumb dictionaries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripSpider">
+            <summary>Spider dictionaries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripFormsAnnots">
+            <summary>Strip and flatten form fields and annotations.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripAlternates">
+            <summary>Strip alternate image dictionaries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFStripType.eStripAll">
+            <summary>Strip all of the above.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorConversion.eConvNone">
+            <summary>No conversion.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorConversion.eConvRGB">
+            <summary>Color conversion to the ICE sRGB color space (Web).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorConversion.eConvCMYK">
+            <summary>Color conversion to the CMYK color space (Printing).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorConversion.eConvGray">
+            <summary>Color conversion to the Gray color space (B/W TV compatible).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eNull">
+            <summary>No valid pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeBoolean">
+            <summary>A boolean pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeInteger">
+            <summary>An integer pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeReal">
+            <summary>A real pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeString">
+            <summary>A string pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeName">
+            <summary>A name pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeArray">
+            <summary>An array pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeDictionary">
+            <summary>A dictionary pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeStream">
+            <summary>A stream pdf object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFObjectType.eTypeIndirect">
+            <summary>An indirect pdf object, combines properties of dictionary and stream object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFContentObject.eNone">
+            <summary>No valid content object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFContentObject.eText">
+            <summary>A text object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFContentObject.eImage">
+            <summary>An image object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFContentObject.ePath">
+            <summary>A path object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFContentObject.eSave">
+            <summary>Save the current graphics state on the graphics state stack.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFContentObject.eRestore">
+            <summary>Restore the graphics state by removing the most recently saved state from the stack and making it the current graphics state.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFContentObject.eBeginOCM">
+            <summary>Start of a sequence of objects, whose visibility is defined by an optional content membership string.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFContentObject.eEndOCM">
+            <summary>End of OCM sequence.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFTextExtractConfiguration.eTECBreakTextState">
+            <summary>Start new text object, if text state changes (font, font size, horiz scaling).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFTextExtractConfiguration.eTECBreakGraphicsState">
+            <summary>Start new text object, if graphics state changes (color).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFTextExtractConfiguration.eTECBreakSpaceUnicode">
+            <summary>Start new text object, if extracted text contains a space Unicode.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFTextExtractConfiguration.eTECPosMergeSingleSpace">
+            <summary>Merge text tokens that are a single space width apart, insert space.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFTextExtractConfiguration.eTECPosMergeMultiSpace">
+            <summary>Merge text tokens that are one or more space widths apart, insert multiple spaces.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotInvisible">
+            <summary>If set, do not display the annotation.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotHidden">
+            <summary>If set, do not display or print the annotation or allow it to interact with the user.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotPrint">
+            <summary>If set, print the annotation when the page is printed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotNoZoom">
+            <summary>If set, do not scale the annotation’s appearance to match the magnification of the page</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotNoRotate">
+            <summary>If set, do not rotate the annotation’s appearance to match the rotation of the page</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotNoView">
+            <summary>If set, do not display the annotation on the screen or allow it to interact with the user.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotReadOnly">
+            <summary>If set, do not allow the annotation to interact with the user.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotLocked">
+            <summary>If set, do not allow the annotation to be deleted or its properties (including position and size) to be modified by the user</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFAnnotationFlag.eAnnotToggleNoView">
+            <summary>If set, invert the interpretation of the NoView flag for certain events.</summary>
+        </member>
+        <member name="T:Pdftools.Pdf.PDFDate">
+            structure representing a date and time of day (e.g. CreationDate) */
+        </member>
+        <member name="F:Pdftools.Pdf.PDFDate.iYear">
+            year 1900..2100 
+        </member>
+        <member name="F:Pdftools.Pdf.PDFDate.iMonth">
+            1..12 
+        </member>
+        <member name="F:Pdftools.Pdf.PDFDate.iDay">
+            1..31 
+        </member>
+        <member name="F:Pdftools.Pdf.PDFDate.iHour">
+            0..23 
+        </member>
+        <member name="F:Pdftools.Pdf.PDFDate.iMinute">
+            0..59 
+        </member>
+        <member name="F:Pdftools.Pdf.PDFDate.iSecond">
+            0..59 
+        </member>
+        <member name="F:Pdftools.Pdf.PDFDate.iUtcOffset">
+            time zone information, offset to UTC in minutes 
+        </member>
+        <member name="T:Pdftools.Pdf.PDFErrorCode">
+            <summary>
+            Error codes of all 3-Heights products.
+            </summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_INFO_SUCCESS">
+            <summary>The operation was completed successfully.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_S_SUCCESS">
+            <summary>The operation was completed successfully.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_MEMORY_ALLOCATE">
+            <summary>Memory allocation error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_ASCII85_OVERFLOW">
+            <summary>The value represented by a group of 5 characters is greater than 2^32 - 1.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_ASCII85_Z">
+            <summary>A 'z' character occurs in the middle of a group in an ASCII85 stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_ASCII85_INCOMPLETE">
+            <summary>A final partial group contains only one character in an ASCII85 stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_ASCII85_CHAR">
+            <summary>An invalid character was encountered in an ASCII85 stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_ASCII85_EOS">
+            <summary>An EOD code was missing in an ASCII85 stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_ASCIIHEX_CHAR">
+            <summary>A character in an ASCIIHex stream is invalid.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_ASCIIHEX_EOS">
+            <summary>An EOD code was missing in an ASCIIHex stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_CCITT_LINE">
+            <summary>The CCITTFax stream contains a line which is too long.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_CCITT_1DEXT">
+            <summary>The CCITTFax stream contains 1D extensions.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_CCITT_HUF1D">
+            <summary>The CCITTFax stream contains an invalid 1D huffman code.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_CCITT_2DEXT">
+            <summary>The CCITTFax stream contains 2D extensions.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_CCITT_HUF2D">
+            <summary>The CCITTFax stream contains an invalid 2D huffman code.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_LZW_EOS">
+            <summary>An EOD code was missing in an LZW stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_LZW_CODE">
+            <summary>An invalid code was encountered in an LZW stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_RLE_EOS">
+            <summary>An EOD code was missing in an RunLength stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_E_TCP_CONN">
+            <summary>Failed to establish TCP connection to %host%:%port%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_E_TCP_RESP">
+            <summary>TCP failed to send %url% (error code %code%).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_E_HTTP_REQ">
+            <summary>Failed to send HTTP %verb% request to http://%host%%resource%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_E_HTTP_RESP">
+            <summary>Failed to send %url%. Server returned HTTP status code %code%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_E_MAXPATH">
+            <summary>Path too long: '%path%'. Maximum length is %maxlen%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_I_TASK_SCHEDULED">
+            <summary>Task scheduled: %name%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_I_TASK_STARTED">
+            <summary>Task started: %name%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_I_TASK_FINISHED">
+            <summary>Task finished: %name%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_E_TASK_FAILED">
+            <summary>Task failed: %name%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_FATAL">
+            <summary>Unknown fatal error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_FATAL">
+            <summary>Unknown fatal error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_FILEOPEN">
+            <summary>The file couldn't be opened.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_FILECREATE">
+            <summary>The file couldn't be created.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_SETPOS">
+            <summary>The file's position couldn't be set.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_HEADER">
+            <summary>The file header was not found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_HEADEROFFS">
+            <summary>The file header must be located at the beginning.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_VERSION">
+            <summary>The file header version does not conform to the standard.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_BINARY">
+            <summary>The comment, classifying the file as containing 8-bit binary data, is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_EOF">
+            <summary>The end-of-file marker was not found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EOFOFFS">
+            <summary>The last line of the file must contain an end-of-file marker.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_STARTXREF">
+            <summary>The 'startxref' keyword or the xref position was not found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_XREF">
+            <summary>The 'xref' keyword was not found or the xref table is malformed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_XREFOFFS">
+            <summary>The 'xref' keyword must be located at the given offset.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_XREFSEP">
+            <summary>The xref fields must be separated by a single space and terminated by a single end-of-line marker.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_TRAILER">
+            <summary>The file trailer dictionary is missing or invalid.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_ROOT">
+            <summary>The root object was not found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_ENCRYPT">
+            <summary>The file trailer dictionary must not have an encrypt key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_ID">
+            <summary>The file trailer dictionary must have an id key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PASSWORD">
+            <summary>The authentication failed due to a wrong password.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CORRUPT">
+            <summary>The file is corrupt and cannot be repaired. Some of the contents can possibly be recovered.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_CORRUPT">
+            <summary>The file is corrupt and needs to be repaired.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_OBJNUMBER">
+            <summary>The object with the number %n% doesn't exist.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_GENNUMBER">
+            <summary>The generation number %n1% of the object doesn't match with the generation number %n2% of the object's reference.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_XFANEEDSRENDERING">
+            <summary>The file contains unrendered XFA fields.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_UNKSECHANDLER">
+            <summary>The file uses a proprietary security handler.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_SECALGONIMP">
+            <summary>The file uses a security algorithm that is not implemented.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_FILTER">
+            <summary>The filter %name% is unknown.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_IMAGEDATA">
+            <summary>The image's sample stream's computed length %l1% is different to the actual length %l2%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OBJNO">
+            <summary>The object number is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_GENNO">
+            <summary>The generation number is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_IDENTITY">
+            <summary>The object's identity %n1% doesn't match with the object's reference identity %n2%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OBJ">
+            <summary>The "obj" keyword is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_NULL">
+            <summary>The object %obj% is empty (null).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_LENGTH">
+            <summary>The "Length" key of the stream object is wrong.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_ENDSTREAM">
+            <summary>The "endstream" keyword is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_ENDOBJ">
+            <summary>The "endobj" keyword is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_XREFOFF">
+            <summary>The offset in the xref table is not correct.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_ARRAYSIZE">
+            <summary>An array contains more than 8191 elements.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_NAMELENGTH">
+            <summary>A name is longer than 127 bytes.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_INTEGERVAL">
+            <summary>An integer value is larger than 2^31-1.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_DICTCAPACITY">
+            <summary>A dictionary contains more than 4095 entries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_REALVAL">
+            <summary>A real value is larger than 2^15-1.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_PAGEBOX">
+            <summary>The page boundary %name% is not within the allowed range.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PAGE">
+            <summary>The page doesn't exist.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PAGETYPE">
+            <summary>The page or page tree node has a missing or invalid "Type" key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PAGEKIDS">
+            <summary>The page tree node has a missing or invalid "Kids" key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PAGECOUNT">
+            <summary>The page tree node has a missing or invalid "Count" key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PAGEPARENT">
+            <summary>The page or page tree node has a missing or invalid "Parent" key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PAGERES">
+            <summary>The page has a missing or invalid "Resources" key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PAGEMEDIABOX">
+            <summary>The page has a missing or invalid "MediaBox" key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_NOPAGES">
+            <summary>The documents contains no pages.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_TOKEN">
+            <summary>An unexpected token was found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OPERATOR">
+            <summary>The content stream contains an invalid operator.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OPERANDS">
+            <summary>The operator has an invalid number of operands.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OPNDSTACK">
+            <summary>An operand stack over- or underflow occurred.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OPNDSTRING">
+            <summary>The operand must be a string.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OPNDNAME">
+            <summary>The operand must be a name.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OPNDARRAY">
+            <summary>The operand must be an array.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OPNDDICT">
+            <summary>The operand must be a dictionary.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OPNDVALUE">
+            <summary>The value %value% of an operand is out of range.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_UNKFONT">
+            <summary>The name %name% of a font resource is unknown.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_UNKCOLORSPACE">
+            <summary>The name %name% of a color space resource is unknown.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_UNKGS">
+            <summary>The name %name% of a graphics state dictionary resource is unknown.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_UNKPAT">
+            <summary>The name %name% of a pattern dictionary resource is unknown.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_UNKXOBJ">
+            <summary>The name %name% of a xobject resource is unknown.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_GSSTACK">
+            <summary>A graphics state stack over- or underflow occurred.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_BEGINTEXT">
+            <summary>A begin text operator is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_ENDTEXT">
+            <summary>An end text operator is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_BEGINPATH">
+            <summary>A path start operator was missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_EMPTYXOBJ">
+            <summary>The form xobject %name% has an empty or unreadable content stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_UNUSEDPATH">
+            <summary>An path was constructed but not painted.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_EMPTYPATH">
+            <summary>A path painting operator was used on an empty path.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_STOPPED">
+            <summary>The analysis has been stopped.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_KEYIGNORED">
+            <summary>The key %key% was ignored.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_VALTYPE">
+            <summary>The value of the key %key% must be of type %type%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_KEYREQ">
+            <summary>The key %key% is required but missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_VALIND">
+            <summary>The value of the key %key% must be an indirect object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_VALDIR">
+            <summary>The value of the key %key% must be a direct object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_VALREQ">
+            <summary>The value of the key %key% is %v1% but must be %v2%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_KEYPROHIB">
+            <summary>The dictionary must not contain the key '%key%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_VALPROHIB">
+            <summary>The key %key% has a value %val% which is prohibited.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_ATTRNOTREC">
+            <summary>The key %key% is present but not recommended.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_KEYRECOMM">
+            <summary>The key %key% is recommended.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_INCONSISTENCY">
+            <summary>The key %key1% is inconsistent with the key %key2%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_VALNTYPE">
+            <summary>The value of the key %key% must not be of type %type%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_NAMEENC">
+            <summary>The name object must be UTF-8 encoded.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EFPDF">
+            <summary>The embedded file '%name%' is not a PDF file.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EFPDFA">
+            <summary>The embedded file '%name%' must be PDF/A compliant.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_IMPLCCONV">
+            <summary>ICCBased CMYK color space must not be used with overprint mode 1.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_COLORANTMIS">
+            <summary>All '%name%' colorants must have the same tint transform and alternate space.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_JPXNUMCHAN">
+            <summary>The number of color channels in the JPEG2000 data must not be %n%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_JPXCOLRAPPROX">
+            <summary>JPEG2000 data with multiple color space definitions and incorrect APPROX field.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_JPXCOLRMETH">
+            <summary>The value of the METH entry in the 'colr' box in the JPEG2000 data is invalid.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_JPXENUMCS">
+            <summary>The enumerated colour space %i% must not be used in JPEG2000 data.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_JPXCIEJAB">
+            <summary>JPEG2000 enumerated colour space 19 (CIEJab) shall not be used.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_JPXBITDEPTH">
+            <summary>All channels in JPEG2000 data must have a bit depth in the range from 1 to 38.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_JPXCLRBD">
+            <summary>All color channels in JPEG2000 data must have the same bit depth.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_JPXOPACITY">
+            <summary>JPEG2000 data contains invalid opacity channels.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_JPXINVALID">
+            <summary>Error in JPEG2000 data.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_DEFBLENDCS">
+            <summary>The page must define a default blending color space.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_BLENDCS">
+            <summary>The blending color space is of an invalid type.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_OCCNAMECOLL">
+            <summary>Two optional content configurations must not have the same name '%name%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_OCORDER">
+            <summary>The order array in the OC configuration '%conf%' must contain '%ocg%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_OIMISSMATCH">
+            <summary>The file must not contain different output intents.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_APPNOSTATE">
+            <summary>The appearance must have state dictionaries (subdictionaries to 'N').</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_NORES">
+            <summary>The content stream must have an explicitly associated Resources dictionary.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_NOUNICODE">
+            <summary>The unicode for cid %cid% is unknown.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_FONTPROG">
+            <summary>The embedded font program '%font%' cannot be read.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_FONTFILE">
+            <summary>The attrbute %attr% of the font descriptor must match with the font type %type%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CMAPEMB">
+            <summary>The CMAP %name% must be embedded.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EMBED">
+            <summary>The font %font% must be embedded.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_SYSTEMFONT">
+            <summary>Font %f1%: The pre-installed font '%f2%' is used.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_FONTREPLACE">
+            <summary>Font %f1%: The font was replaced with '%f2%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_OTFFONTPROG">
+            <summary>Font %font% has an OpenType font program that is not allowed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_NOAFREF">
+            <summary>File specification '%name%' not associated with an object.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_PATTERNTYPE">
+            <summary>The pattern type %type% is unknown or not yet implemented.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CHARPROC">
+            <summary>Font %font%: The charproc of glyph '%glyph%' was not found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_SHADINGTYPE">
+            <summary>The shading type %type% is unknown or not yet implemented.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_FONTINSTALL">
+            <summary>Font %font%: The font program '%fp%' couldn't be installed successfully.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_PAINTMISSING">
+            <summary>The path is constructed but the painting operator is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_GDIPLUS">
+            <summary>GDI+ error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_GDI">
+            <summary>GDI error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_CUSTOM01">
+            <summary>The file size exceeds the limit.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM01">
+            <summary>The file size exceeds a critical limit.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM02">
+            <summary>The file must not be password protected.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM03">
+            <summary>The font %font% must be embedded and subsetted.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM05">
+            <summary>The file's version must be %version% or older.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM06">
+            <summary>The page no. %Page No.% must not be blank.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM07">
+            <summary>The page no. %Page No.% must not have annotations (comments or drawing markups).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM08">
+            <summary>The document must not have layers.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_CUSTOM09">
+            <summary>The image's resolution on page no. %Page No.% must be in the configured range.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM10">
+            <summary>The producer "%prod%" must meet the organization's standard.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM11">
+            <summary>The font %font% is not on the approved list.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM12">
+            <summary>The digital signature of "%name%" must be valid and meet the organization's standard.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_CUSTOM13">
+            <summary>The page no. %Page No.% contains a scanned image and is not word searchable.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_CUSTOM14">
+            <summary>The page no. %Page No.% contains a scanned image that includes color.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM15">
+            <summary>The document was modified after it has been signed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM16">
+            <summary>The creator "%crea%" must meet the organization's standard.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM17">
+            <summary>The document must not have file attachments (%F%).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM19">
+            <summary>The document must not have 3D annotations.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_CUSTOM20">
+            <summary>The document contains a link to an external resource.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM21">
+            <summary>The document contains hidden layers.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM22">
+            <summary>The file's version must be %version% or newer.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM23">
+            <summary>The page no. %Page No.% contains colored objects.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CUSTOM24">
+            <summary>The document contains an invisible signature.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_APPSTATE">
+            <summary>The appearance has state dictionaries (subdictionaries to 'N').</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_ICCINVALID">
+            <summary>The embedded ICC profile couldn't be read.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_ICCVERSION">
+            <summary>The embedded ICC profile's version is not supported.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_MULTIPLEOI">
+            <summary>The document has multiple PDF/A output intents.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_HEXODD">
+            <summary>A hexadecimal string contains an odd number of bytes.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EOFDATA">
+            <summary>There is data after the EOF marker.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_LINEARID">
+            <summary>The ID in the 1st page and last trailer of a linearized file are different.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_XREFSPACE">
+            <summary>The separator in a xref subsection header must be a single space.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_XREFEOL">
+            <summary>The separator between 'xref' and the subsection must be an EOL.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_STREAMEOL">
+            <summary>The separator after 'stream' must be CR-LF or LF.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EOLENDSTREAM">
+            <summary>The separator before 'endstream' must be an EOL.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_NUMSPACEGEN">
+            <summary>The separator between the object and generation number must be a single space.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_GENSPACEOBJ">
+            <summary>The separator between the generation number and 'obj' must be a single space.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EOLOBJNUM">
+            <summary>The separator before the object number must be an EOL.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EOLENDOBJ">
+            <summary>The separator before an 'endobj' must be an EOL.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_OBJEOL">
+            <summary>The separator after an 'obj' must be an EOL.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_ENDOBJEOL">
+            <summary>The separator after an 'endobj' must be an EOL.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I_TRUETYPECMAP">
+            <summary>The embedded TrueType font %font% contains more than one cmap entries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_TRUETYPECMAP">
+            <summary>The embedded TrueType font %font% contains more than one cmap entries.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_XMPPROPREQ">
+            <summary>The required XMP property '%prefix%:%propname%' is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PROPINV">
+            <summary>The property '%prop%' is not allowed in this XMP schema.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_XMPVALREQ">
+            <summary>The XMP property '%prefix%:%propname%' has the invalid value '%invval%'. Required is '%reqval%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_WIDTHMISSMATCH">
+            <summary>The width for character %cid% in font '%font%' does not match.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_GLYPHMISSING">
+            <summary>The glyph for character %cid% in font '%font%' is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_NOENCODING">
+            <summary>The encoding for character code %code% in font '%font%' is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_XREFSTREAM">
+            <summary>The file contains cross reference streams.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_INFOXMPMISS">
+            <summary>The required XMP property '%prefix%:%propname%' for the document information entry '%infoentry%' is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_INFOXMPNSYNC">
+            <summary>The XMP property '%prefix%:%propname%' is not synchronized with the document information entry '%infoentry%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CONVERSION">
+            <summary>Conversion errors in PDF to PDF/A conversion.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_POSTANALYSIS">
+            <summary>Post analysis errors in PDF to PDF/A conversion.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_NOENCRYPTION">
+            <summary>The file must not be encrypted to be PDF/A conform.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_DESTPAGE">
+            <summary>The page reference in a destination is invalid.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_DESTTYPE">
+            <summary>The type of a destination is unknown.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_DESTOPNDS">
+            <summary>The number or the type of the destination operands is wrong.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_CONFORMANCE">
+            <summary>The document does not conform to the requested standard.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EMBFILES">
+            <summary>The document contains embedded files.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_DEVCOLOR">
+            <summary>A device-specific color space (%cs%) without an appropriate output intent is used.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_APPNOENTRY">
+            <summary>The appearance dictionary doesn't contain an entry.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_EXTSTM">
+            <summary>The content of the stream must not be in an external file.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_W_INVCS">
+            <summary>The color space is invalid.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_SIGCREA">
+            <summary>Signature creation error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_SIGVAL">
+            <summary>Signature validation error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_SIGGETLENGTH">
+            <summary>Signature length is zero.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_SIGLENGTH">
+            <summary>Signature creation returns a length of %l1% which should not exceed %l2%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_INPSIG">
+            <summary>Input document must not be signed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_INFO_JB2">
+            <summary>The JB2 stream issued a message: '%msg%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_WARNING_JB2">
+            <summary>The JB2 stream caused a warning: '%msg%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.BSE_ERROR_JB2">
+            <summary>The JB2 stream caused an error: '%msg%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JMSG_NOMESSAGE">
+            <summary>Error in DCT stream: Bogus message code %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_ALIGN_TYPE">
+            <summary>Error in DCT stream: ALIGN_TYPE is wrong, please fix.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_ALLOC_CHUNK">
+            <summary>Error in DCT stream: MAX_ALLOC_CHUNK is wrong, please fix.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_BUFFER_MODE">
+            <summary>Error in DCT stream: Bogus buffer control mode.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_COMPONENT_ID">
+            <summary>Error in DCT stream: Invalid component ID %d in SOS.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_CROP_SPEC">
+            <summary>Error in DCT stream: Invalid crop request.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_DCT_COEF">
+            <summary>Error in DCT stream: DCT coefficient out of range.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_DCTSIZE">
+            <summary>Error in DCT stream: DCT scaled block size %dx%d not supported.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_DROP_SAMPLING">
+            <summary>Error in DCT stream: Component index %d: mismatching sampling ratio %d:%d, %d:%d, %C.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_HUFF_TABLE">
+            <summary>Error in DCT stream: Bogus Huffman table definition.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_IN_COLORSPACE">
+            <summary>Error in DCT stream: Bogus input colorspace.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_J_COLORSPACE">
+            <summary>Error in DCT stream: Bogus JPEG colorspace.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_LENGTH">
+            <summary>Error in DCT stream: Bogus marker length.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_LIB_VERSION">
+            <summary>Error in DCT stream: Wrong JPEG library version: library is %d, caller expects %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_MCU_SIZE">
+            <summary>Error in DCT stream: Sampling factors too large for interleaved scan.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_POOL_ID">
+            <summary>Error in DCT stream: Invalid memory pool code %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_PRECISION">
+            <summary>Error in DCT stream: Unsupported JPEG data precision %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_PROGRESSION">
+            <summary>Error in DCT stream: Invalid progressive parameters Ss=%d Se=%d Ah=%d Al=%d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_PROG_SCRIPT">
+            <summary>Error in DCT stream: Invalid progressive parameters at scan script entry %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_SAMPLING">
+            <summary>Error in DCT stream: Bogus sampling factors.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_SCAN_SCRIPT">
+            <summary>Error in DCT stream: Invalid scan script at entry %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_STATE">
+            <summary>Error in DCT stream: Improper call to JPEG library in state %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_STRUCT_SIZE">
+            <summary>Error in DCT stream: JPEG parameter struct mismatch: library thinks size is %u, caller expects %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BAD_VIRTUAL_ACCESS">
+            <summary>Error in DCT stream: Bogus virtual array access.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_BUFFER_SIZE">
+            <summary>Error in DCT stream: Buffer passed to JPEG library is too small.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_CANT_SUSPEND">
+            <summary>Error in DCT stream: Suspension not allowed here.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_CCIR601_NOTIMPL">
+            <summary>Error in DCT stream: CCIR601 sampling not implemented yet.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_COMPONENT_COUNT">
+            <summary>Error in DCT stream: Too many color components: %d, max %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_CONVERSION_NOTIMPL">
+            <summary>Error in DCT stream: Unsupported color conversion request.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_DAC_INDEX">
+            <summary>Error in DCT stream: Bogus DAC index %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_DAC_VALUE">
+            <summary>Error in DCT stream: Bogus DAC value 0x%x.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_DHT_INDEX">
+            <summary>Error in DCT stream: Bogus DHT index %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_DQT_INDEX">
+            <summary>Error in DCT stream: Bogus DQT index %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_EMPTY_IMAGE">
+            <summary>Error in DCT stream: Empty JPEG image (DNL not supported).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_EMS_READ">
+            <summary>Error in DCT stream: Read from EMS failed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_EMS_WRITE">
+            <summary>Error in DCT stream: Write to EMS failed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_EOI_EXPECTED">
+            <summary>Error in DCT stream: Didn't expect more than one scan.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_FILE_READ">
+            <summary>Error in DCT stream: Input file read error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_FILE_WRITE">
+            <summary>Error in DCT stream: Output file write error --- out of disk space?.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_FRACT_SAMPLE_NOTIMPL">
+            <summary>Error in DCT stream: Fractional sampling not implemented yet.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_HUFF_CLEN_OVERFLOW">
+            <summary>Error in DCT stream: Huffman code size table overflow.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_HUFF_MISSING_CODE">
+            <summary>Error in DCT stream: Missing Huffman code table entry.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_IMAGE_TOO_BIG">
+            <summary>Error in DCT stream: Maximum supported image dimension is %u pixels.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_INPUT_EMPTY">
+            <summary>Error in DCT stream: Empty input file.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_INPUT_EOF">
+            <summary>Error in DCT stream: Premature end of input file.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_MISMATCHED_QUANT_TABLE">
+            <summary>Error in DCT stream: Cannot transcode due to multiple use of quantization table %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_MISSING_DATA">
+            <summary>Error in DCT stream: Scan script does not transmit all data.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_MODE_CHANGE">
+            <summary>Error in DCT stream: Invalid color quantization mode change.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_NOTIMPL">
+            <summary>Error in DCT stream: Not implemented yet.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_NOT_COMPILED">
+            <summary>Error in DCT stream: Requested feature was omitted at compile time.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_NO_ARITH_TABLE">
+            <summary>Error in DCT stream: Arithmetic table 0x%02x was not defined.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_NO_BACKING_STORE">
+            <summary>Error in DCT stream: Backing store not supported.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_NO_HUFF_TABLE">
+            <summary>Error in DCT stream: Huffman table 0x%02x was not defined.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_NO_IMAGE">
+            <summary>Error in DCT stream: JPEG datastream contains no image.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_NO_QUANT_TABLE">
+            <summary>Error in DCT stream: Quantization table 0x%02x was not defined.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_NO_SOI">
+            <summary>Error in DCT stream: Not a JPEG file: starts with 0x%02x 0x%02x.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_OUT_OF_MEMORY">
+            <summary>Error in DCT stream: Insufficient memory (case %d).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_QUANT_COMPONENTS">
+            <summary>Error in DCT stream: Cannot quantize more than %d color components.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_QUANT_FEW_COLORS">
+            <summary>Error in DCT stream: Cannot quantize to fewer than %d colors.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_QUANT_MANY_COLORS">
+            <summary>Error in DCT stream: Cannot quantize to more than %d colors.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_SOF_BEFORE">
+            <summary>Error in DCT stream: Invalid JPEG file structure: %S before SOF.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_SOF_DUPLICATE">
+            <summary>Error in DCT stream: Invalid JPEG file structure: two SOF markers.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_SOF_NO_SOS">
+            <summary>Error in DCT stream: Invalid JPEG file structure: missing SOS marker.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_SOF_UNSUPPORTED">
+            <summary>Error in DCT stream: Unsupported JPEG process: SOF type 0x%02x.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_SOI_DUPLICATE">
+            <summary>Error in DCT stream: Invalid JPEG file structure: two SOI markers.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_TFILE_CREATE">
+            <summary>Error in DCT stream: Failed to create temporary file %S.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_TFILE_READ">
+            <summary>Error in DCT stream: Read failed on temporary file.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_TFILE_SEEK">
+            <summary>Error in DCT stream: Seek failed on temporary file.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_TFILE_WRITE">
+            <summary>Error in DCT stream: Write failed on temporary file --- out of disk space?.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_TOO_LITTLE_DATA">
+            <summary>Error in DCT stream: Application transferred too few scanlines.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_UNKNOWN_MARKER">
+            <summary>Error in DCT stream: Unsupported marker type 0x%02x.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_VIRTUAL_BUG">
+            <summary>Error in DCT stream: Virtual array controller messed up.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_WIDTH_OVERFLOW">
+            <summary>Error in DCT stream: Image too wide for this implementation.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_XMS_READ">
+            <summary>Error in DCT stream: Read from XMS failed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JERR_XMS_WRITE">
+            <summary>Error in DCT stream: Write to XMS failed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JMSG_COPYRIGHT">
+            <summary>Copyright (C) 2011, Thomas G. Lane, Guido Vollbeding.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JMSG_VERSION">
+            <summary>8c  16-Jan-2011.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_16BIT_TABLES">
+            <summary>Error in DCT stream: Caution: quantization tables are too coarse for baseline JPEG.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_ADOBE">
+            <summary>Error in DCT stream: Adobe APP14 marker: version %d, flags 0x%04x 0x%04x, transform %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_APP0">
+            <summary>Error in DCT stream: Unknown APP0 marker (not JFIF), length %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_APP14">
+            <summary>Error in DCT stream: Unknown APP14 marker (not Adobe), length %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_DAC">
+            <summary>Error in DCT stream: Define Arithmetic Table 0x%02x: 0x%02x.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_DHT">
+            <summary>Error in DCT stream: Define Huffman Table 0x%02x.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_DQT">
+            <summary>Error in DCT stream: Define Quantization Table %d  precision %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_DRI">
+            <summary>Error in DCT stream: Define Restart Interval %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_EMS_CLOSE">
+            <summary>Error in DCT stream: Freed EMS handle %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_EMS_OPEN">
+            <summary>Error in DCT stream: Obtained EMS handle %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_EOI">
+            <summary>Error in DCT stream: End Of Image.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_HUFFBITS">
+            <summary>Error in DCT stream:         %3d %3d %3d %3d %3d %3d %3d %3d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_JFIF">
+            <summary>Error in DCT stream: JFIF APP0 marker: version %d.%02d, density %dx%d  %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_JFIF_BADTHUMBNAILSIZE">
+            <summary>Error in DCT stream: Warning: thumbnail image size does not match data length %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_JFIF_EXTENSION">
+            <summary>Error in DCT stream: JFIF extension marker: type 0x%02x, length %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_JFIF_THUMBNAIL">
+            <summary>Error in DCT stream:     with %d x %d thumbnail image.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_MISC_MARKER">
+            <summary>Error in DCT stream: Miscellaneous marker 0x%02x, length %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_PARMLESS_MARKER">
+            <summary>Error in DCT stream: Unexpected marker 0x%02x.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_QUANTVALS">
+            <summary>Error in DCT stream:         %4u %4u %4u %4u %4u %4u %4u %4u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_QUANT_3_NCOLORS">
+            <summary>Error in DCT stream: Quantizing to %d = %d*%d*%d colors.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_QUANT_NCOLORS">
+            <summary>Error in DCT stream: Quantizing to %d colors.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_QUANT_SELECTED">
+            <summary>Error in DCT stream: Selected %d colors for quantization.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_RECOVERY_ACTION">
+            <summary>Error in DCT stream: At marker 0x%02x, recovery action %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_RST">
+            <summary>Error in DCT stream: RST%d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_SMOOTH_NOTIMPL">
+            <summary>Error in DCT stream: Smoothing not supported with nonstandard sampling ratios.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_SOF">
+            <summary>Error in DCT stream: Start Of Frame 0x%02x: width=%u, height=%u, components=%d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_SOF_COMPONENT">
+            <summary>Error in DCT stream:     Component %d: %dhx%dv q=%d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_SOI">
+            <summary>Error in DCT stream: Start of Image.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_SOS">
+            <summary>Error in DCT stream: Start Of Scan: %d components.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_SOS_COMPONENT">
+            <summary>Error in DCT stream:     Component %d: dc=%d ac=%d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_SOS_PARAMS">
+            <summary>Error in DCT stream:   Ss=%d, Se=%d, Ah=%d, Al=%d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_TFILE_CLOSE">
+            <summary>Error in DCT stream: Closed temporary file %S.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_TFILE_OPEN">
+            <summary>Error in DCT stream: Opened temporary file %S.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_THUMB_JPEG">
+            <summary>Error in DCT stream: JFIF extension marker: JPEG-compressed thumbnail image, length %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_THUMB_PALETTE">
+            <summary>Error in DCT stream: JFIF extension marker: palette thumbnail image, length %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_THUMB_RGB">
+            <summary>Error in DCT stream: JFIF extension marker: RGB thumbnail image, length %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_UNKNOWN_IDS">
+            <summary>Error in DCT stream: Unrecognized component IDs %d %d %d, assuming YCbCr.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_XMS_CLOSE">
+            <summary>Error in DCT stream: Freed XMS handle %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JTRC_XMS_OPEN">
+            <summary>Error in DCT stream: Obtained XMS handle %u.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_ADOBE_XFORM">
+            <summary>Warning in DCT stream: Unknown Adobe color transform code %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_ARITH_BAD_CODE">
+            <summary>Warning in DCT stream: Corrupt JPEG data: bad arithmetic code.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_BOGUS_PROGRESSION">
+            <summary>Warning in DCT stream: Inconsistent progression sequence for component %d coefficient %d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_EXTRANEOUS_DATA">
+            <summary>Warning in DCT stream: Corrupt JPEG data: %u extraneous bytes before marker 0x%02x.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_HIT_MARKER">
+            <summary>Warning in DCT stream: Corrupt JPEG data: premature end of data segment.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_HUFF_BAD_CODE">
+            <summary>Warning in DCT stream: Corrupt JPEG data: bad Huffman code.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_JFIF_MAJOR">
+            <summary>Warning in DCT stream: Warning: unknown JFIF revision number %d.%02d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_JPEG_EOF">
+            <summary>Warning in DCT stream: Premature end of JPEG file.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_MUST_RESYNC">
+            <summary>Warning in DCT stream: Corrupt JPEG data: found marker 0x%02x instead of RST%d.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_NOT_SEQUENTIAL">
+            <summary>Warning in DCT stream: Invalid SOS parameters for sequential JPEG.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPEG_E_JWRN_TOO_MUCH_DATA">
+            <summary>Warning in DCT stream: Application transferred too many scanlines.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_0">
+            <summary>Error in JPX stream: Fatal.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_1">
+            <summary>Error in JPX stream: License_Level_Too_Low.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_2">
+            <summary>Error in JPX stream: Invalid_License.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_3">
+            <summary>Error in JPX stream: Invalid_Marker.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_4">
+            <summary>Error in JPX stream: Incompatible_Format.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_5">
+            <summary>Error in JPX stream: Invalid_Header.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_6">
+            <summary>Error in JPX stream: Invalid_Label.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_7">
+            <summary>Error in JPX stream: Maximum_Box_Size_Exceeded.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_8">
+            <summary>Error in JPX stream: Lossless_Compression_Mode.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_9">
+            <summary>Error in JPX stream: Invalid_Region.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_10">
+            <summary>Error in JPX stream: Transcode_Scale_Palette_Images.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_11">
+            <summary>Error in JPX stream: Transcoding_Finished.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_12">
+            <summary>Error in JPX stream: Use_SetPalette.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_13">
+            <summary>Error in JPX stream: Invalid_Channel_Definition.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_14">
+            <summary>Error in JPX stream: Invalid_Component_Mapping.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_15">
+            <summary>Error in JPX stream: Missing_Component_Mapping.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_16">
+            <summary>Error in JPX stream: Invalid_Palette.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_17">
+            <summary>Error in JPX stream: Missing_Palette.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_18">
+            <summary>Error in JPX stream: Use_SetLAB_Function.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_19">
+            <summary>Error in JPX stream: Use_SetICC_Function.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_20">
+            <summary>Error in JPX stream: Invalid_ICC_Profile.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_21">
+            <summary>Error in JPX stream: Invalid_Color_Spec_Index.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_22">
+            <summary>Error in JPX stream: Invalid_Meta_Data_Box_Index.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_23">
+            <summary>Error in JPX stream: JPX_File_Format_Required.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_24">
+            <summary>Error in JPX stream: File_Format_Required.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_25">
+            <summary>Error in JPX stream: Decompression_Cancelled.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_26">
+            <summary>Error in JPX stream: More_Bytes_Required.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_27">
+            <summary>Error in JPX stream: Max_Number_Of_ROIs_Reached.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_28">
+            <summary>Error in JPX stream: Invalid_Resolution_Type.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_29">
+            <summary>Error in JPX stream: Invalid_Resolution_Unit.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_30">
+            <summary>Error in JPX stream: Invalid_Resolution.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_31">
+            <summary>Error in JPX stream: Scale_Factor_Is_Too_Large.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_32">
+            <summary>Error in JPX stream: ROI_Shift_Failed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_33">
+            <summary>Error in JPX stream: Invalid_Precinct_Dimensions.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_34">
+            <summary>Error in JPX stream: Invalid_Quantization_Filter_Pair.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_35">
+            <summary>Error in JPX stream: Trial_Time_Expired.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_36">
+            <summary>Error in JPX stream: Not_Yet_Supported.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_37">
+            <summary>Error in JPX stream: Invalid_Sample_Rate.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_38">
+            <summary>Error in JPX stream: Requested_File_Size_Too_Small.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_39">
+            <summary>Error in JPX stream: Byte_Compression_Mode.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_40">
+            <summary>Error in JPX stream: Cannot_Find_Suitable_Grid.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_41">
+            <summary>Error in JPX stream: Read_Callback_Undefined.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_42">
+            <summary>Error in JPX stream: Write_Callback_Undefined.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_43">
+            <summary>Error in JPX stream: Input_Callback_Undefined.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_44">
+            <summary>Error in JPX stream: Bits_Per_Sample_Too_High.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_45">
+            <summary>Error in JPX stream: Compression_Only_Property.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_46">
+            <summary>Error in JPX stream: Decompression_Only_Property.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_47">
+            <summary>Error in JPX stream: Quality_Compression_Mode.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_48">
+            <summary>Error in JPX stream: Set_Only_Property.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_49">
+            <summary>Error in JPX stream: Read_Only_Property.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_50">
+            <summary>Error in JPX stream: Single_Value_For_All_Tiles.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_51">
+            <summary>Error in JPX stream: Single_Value_For_All_Components.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_52">
+            <summary>Error in JPX stream: Invalid_Stream.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_53">
+            <summary>Error in JPX stream: Invalid_Wavelet_Filter_Combination.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_54">
+            <summary>Error in JPX stream: Invalid_Resolution_Level.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_55">
+            <summary>Error in JPX stream: Invalid_Tile_Index.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_56">
+            <summary>Error in JPX stream: Invalid_Component_Dimensions.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_57">
+            <summary>Error in JPX stream: Invalid_Colorspace.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_58">
+            <summary>Error in JPX stream: Invalid_Tile_Arrangement.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_59">
+            <summary>Error in JPX stream: Invalid_Bits_Per_Sample.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_60">
+            <summary>Error in JPX stream: Invalid_Height.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_61">
+            <summary>Error in JPX stream: Invalid_Width.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_62">
+            <summary>Error in JPX stream: Invalid_Property_Key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_63">
+            <summary>Error in JPX stream: Invalid_Property_Value.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_64">
+            <summary>Error in JPX stream: Invalid_Component_Index.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_65">
+            <summary>Error in JPX stream: Invalid_Number_Of_Components.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_66">
+            <summary>Error in JPX stream: Invalid_Pointer.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_67">
+            <summary>Error in JPX stream: Invalid_Handle.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_68">
+            <summary>Error in JPX stream: Failure_Write.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_69">
+            <summary>Error in JPX stream: Failure_Read.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.JPX_ERROR_70">
+            <summary>Error in JPX stream: Failure_Malloc.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.AFW_M_SVC_STARTING">
+            <summary>Starting service.\n</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.AFW_M_SVC_STARTED">
+            <summary>Service started.\n</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.AFW_M_SVC_STOPPING">
+            <summary>Stopping service.\n</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.AFW_M_SVC_STOPPED">
+            <summary>Service stopped.\n</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XML_I_GENERAL">
+            <summary>XML line %line%:%column%: %message%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XML_W_GENERAL">
+            <summary>XML line %line%:%column%: %message%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XML_E_GENERAL">
+            <summary>XML line %line%:%column%: %message%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_E_FEATNIMPL">
+            <summary>The RDF feature '%feature%' is not implemented.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_E_ATTRLI">
+            <summary>rdf:li is not allowed as attribute, only as element.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_E_FEATREM">
+            <summary>The RDF feature '%feature%' has been removed from the standard.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_W_FEATNALLOW">
+            <summary>The RDF feature '%feature%' is not allowed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_E_KEYWORD">
+            <summary>Invalid use of the reserved RDF name 'rdf:%n1%' as %n2%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_I_RDFNS">
+            <summary>The RDF namespace should not be used outside of the RDF syntax (rdf:%name%).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_W_MULTID">
+            <summary>RDF resources should have only one identifier (rdf:resource, rdf:nodeID, rdf:about, rdf:ID, ...).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_E_PARSETYPE">
+            <summary>rdf:parseType='%type%' not recognized.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_I_NONS">
+            <summary>Property '%property%' without namespace is ignored.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_E_URI">
+            <summary>Invalid URI(-reference) &lt;%uri%&gt;.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.RDF_I_UNQUAL">
+            <summary>The unqualified RDF attribute '%attr1%' is deprecated. Use 'rdf:%attr2%' instead.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PACKET_ENC">
+            <summary>Invalid encoding '%enc%' of XMP packet (should be UTF-8, UTF-16, or UTF-32).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_PACKET_ADDCONT">
+            <summary>Additional non-XMP content is not allowed in XMP packet.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PACKET_NOHEAD">
+            <summary>XMP packet header missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PACKET_NOTRAIL">
+            <summary>XMP packet trailer missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PACKET_ATTRMISS">
+            <summary>Missing attribute %attr% in XMP packet %packet%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_PACKET_ATTRCONT">
+            <summary>Deprecated content of XMP packet %packet% attribute '%attr%': '%content%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PACKET_ATTRCONT">
+            <summary>Invalid content of XMP packet %packet% attribute '%attr%': '%content%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PACKET_ATTRORD">
+            <summary>Invalid order of XMP packet %packet% attribute '%attr%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PACKET_ATTRSPACE">
+            <summary>Invalid spacing of XMP packet %attr% attributes. There must be exactly one space between each attribute.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_PACKET_ATTR">
+            <summary>XMP packet %packet% attribute '%attr%' is deprecated.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_PACKET_ATTR">
+            <summary>XMP packet %packet% attribute '%attr%' is forbidden.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_PACKET_ATTRDUP">
+            <summary>Duplicate attribute '%attr%' in XMP packet %packet%.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_META_NORDFELEM">
+            <summary>The rdf:RDF element must not be omitted in XMP.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_META_ADDCONT">
+            <summary>The x:xmpmeta element must not contain any elements other than rdf:RDF.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_META_MULTRES">
+            <summary>There is only one RDF resource allowed in XMP.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_META_MULTRES">
+            <summary>There is only one RDF resource allowed in XMP.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_META_MAINTYPED">
+            <summary>Toplevel typed nodes are not allowed in XMP (%prefix%:%name%).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_META_INVARRELEM">
+            <summary>'%prefix%:%name%' is not allowed in arrays. The elements must be rdf:li or rdf:_N, where N is a positive number.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_META_XAPMETA">
+            <summary>The x:xapmeta element is deprecated (but still allowed for compatibility). use x:xmpmeta instead.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_META_INVTYPE">
+            <summary>Node type '%prefix%:%name%' is not allowed in XMP. The only node types allowed are rdf:Bag, rdf:Seq, and rdf:Alt.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_META_DATATYPE">
+            <summary>Typed literals (with rdf:datatype) are not allowed in XMP.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_META_INVNSURI">
+            <summary>Use of invalid namespace URI: &lt;%uri%&gt; does not end with '/' or '#'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_META_INVNSURI">
+            <summary>Use of invalid namespace URI: &lt;%uri%&gt; does not end with '/' or '#'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_META_ANONRES">
+            <summary>Anonymous RDF resources (rdf:Description without rdf:about attribute) are not allowed in XMP Metadata.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_META_LOOP">
+            <summary>Circular references in RDF resources are not allowed in XMP Metadata.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_SPARS_NOSCHEMURI">
+            <summary>Namespace URI missing in schema description for '%schema%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SPARS_MULTSCHEMURI">
+            <summary>Multiple schema descriptions for schema namespace '%uri%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_SPARS_MULTSCHEMURI">
+            <summary>Multiple schema descriptions for schema namespace '%uri%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_SPARS_PROPNONAME">
+            <summary>Property description without name found in schema '%schema%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SPARS_PROPNOTYPE">
+            <summary>Value type missing in property description for '%prop%' in schema '%schema%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_SPARS_TYPENONAME">
+            <summary>Value type description without name found in schema '%schema%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_E_SPARS_FDNONAME">
+            <summary>Field description without name found in value type '%type%' in schema '%schema%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SPARS_FDNOTYPE">
+            <summary>Value type missing in field description for '%field%' in value type '%type%' in schema '%schema%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_NOSCHEMA">
+            <summary>The schema description for namespace '%prefix%:' (%schema%) is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_PROPNDEF">
+            <summary>The property '%prefix%:%name%' is not defined in schema '%schema%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SVAL_PROPDEPR">
+            <summary>The property '%prefix%:%name%' is deprecated. Use '%reqprefix%:%reqname%' instead.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_PROPDEPR">
+            <summary>The property '%prefix%:%name%' is deprecated and thus forbidden. Use '%reqprefix%:%reqname%' instead.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_TYPE">
+            <summary>%XmpPath% :: Wrong value type. Expected type '%type%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_TYPENDEF">
+            <summary>%XmpPath% :: The value type '%type%' is not defined.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_FDNDEF">
+            <summary>%XmpPath% :: The field '%field%' is not defined in value type '%type%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SVAL_PREFIX">
+            <summary>Unusual prefix '%prefix%:' for namespace '%ns%'. The preferred prefix is '%pref%:'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_PREFIX">
+            <summary>Wrong prefix '%prefix%:' for namespace '%ns%'. The required prefix is '%req%:'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_FDNS">
+            <summary>Wrong namespace '%found%' for value type '%type%'. The required namespace is '%exp%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_FDMISS">
+            <summary>%XmpPath% :: Missing required field '%field%' in value type '%type%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SVAL_NOLANG">
+            <summary>%XmpPath% :: Missing language qualifier.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_SREP_RM">
+            <summary>%XmpPath% :: Value removed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SREP_MVPROP">
+            <summary>%XmpPath% :: Property renamed to '%prefix%:%name%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SREP_CHPREFIX">
+            <summary>Changed prefix for schema '%schema%' from '%oldprefix%' to '%newprefix%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SREP_CHNS">
+            <summary>%XmpPath% :: Changed field namespace from '%oldns%' to '%newns%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SREP_CHARR">
+            <summary>%XmpPath% :: Changed array type from '%oldarr%' to '%newarr%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SREP_GENARR">
+            <summary>%XmpPath% :: Wrapped value in array of type '%arrtype%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_I_SREP_LANG">
+            <summary>%XmpPath% :: Added xml:lang qualifier.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_TYPE">
+            <summary>%XmpPath% :: Nodes have different types: '%type1%' vs. '%type2%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_LITCONT">
+            <summary>%XmpPath% :: Literals have different content: '%content1%' vs. '%content2%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_LITLANG">
+            <summary>%XmpPath% :: Literals have different language: '%language1%' vs. '%language2%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_ARRSIZE">
+            <summary>%XmpPath% :: Arrays have different size: '%size1%' vs. '%size2%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_QUALIFIER">
+            <summary>%XmpPath% :: Node %lr% missing qualifier '%prefix%:%name%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_PROPERTY">
+            <summary>Metadata %lr% missing property '%prefix%:%name%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_PREFIX">
+            <summary>%XmpPath% :: Properties/fields have different prefix: '%prefix1%' vs. '%prefix2%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_METAURI">
+            <summary>Metadata objects have different URIs: '%uri1%' vs. '%uri2%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_FIELD">
+            <summary>%XmpPath% :: Structure %lr% missing field '%prefix%:%name%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XMP_W_COMP_FIELDNS">
+            <summary>%XmpPath% :: Structures have different field namespaces: '%ns1%' vs. '%ns2%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.TIFF_E_ENTRYTYPE">
+            <summary>Invalid entry type in TIFF dictionary.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OCRENGINE">
+            <summary>OCR engine error: '%msg%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_E_OCR">
+            <summary>OCR error: '%msg%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_ERROR_0">
+            <summary>Error in Flate stream: stream end.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_ERROR_1">
+            <summary>Error in Flate stream: need dictionary.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_ERROR_2">
+            <summary>Error in Flate stream: incompatible version.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_ERROR_3">
+            <summary>Error in Flate stream: buffer error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_ERROR_4">
+            <summary>Error in Flate stream: insufficient memory.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_WARNING_6">
+            <summary>Error in Flate stream: data error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_ERROR_5">
+            <summary>Error in Flate stream: data error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_ERROR_7">
+            <summary>Error in Flate stream: stream error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.FLATE_ERROR_8">
+            <summary>Error in Flate stream: file error.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_NOTINIT">
+            <summary>License management is not initialized.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_NOTSET">
+            <summary>No license set.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_NOTFOUND">
+            <summary>License not found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_FORMAT">
+            <summary>Invalid license format.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_MANIP">
+            <summary>License was manipulated.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_VERSION">
+            <summary>Unsupported license format version.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_PRODUCT">
+            <summary>The license does not match the product.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_PLATFORM">
+            <summary>The license does not match the current platform.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_TYPE">
+            <summary>The license type does not match.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_EXPIRED">
+            <summary>The license has expired.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_MEXPIRED">
+            <summary>The maintainance period has expired. Use an older version of the product.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_LEVEL">
+            <summary>The current license does not permit the use of this function.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_STORE_TYPE">
+            <summary>Incorrect type in license store.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.LIC_E_STORE_NAME">
+            <summary>Could not determine product name from key.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_SESSION">
+            <summary>Cannot create a session (or CSP).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_STORE">
+            <summary>Cannot open certificate store.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_CERT">
+            <summary>Certificate not found in store.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_OCSP">
+            <summary>Couldn't get response from OCSP server.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_TSP">
+            <summary>Couldn't get response from TSP server.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_PRIVKEY">
+            <summary>Private key not available.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_SERVER">
+            <summary>Server error: %msg%</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_ALGO">
+            <summary>Unsupported algorithm found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_CREA_E_FAILURE">
+            <summary>Program failure occurred.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_E_CMS">
+            <summary>Malformed cryptographic message syntax (CMS).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_E_DIGEST">
+            <summary>Digest mismatch (document has been modified).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_E_SIGNERCERT">
+            <summary>Signer's certificate is missing.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_E_SIGNATURE">
+            <summary>Signature is not valid.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_W_ISSUERCERT">
+            <summary>None of the certificates was found in the store.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_W_NOTRUSTCHAIN">
+            <summary>The trust chain is not embedded.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_W_TSP">
+            <summary>The time stamp is invalid.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_W_TSPCERT">
+            <summary>The time stamp certificate was not found in the store.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_W_NOTSP">
+            <summary>The time stamp is not present.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_E_ALGO">
+            <summary>Unsupported algorithm found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.SIG_VAL_E_FAILURE">
+            <summary>Program failure occurred.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_SPLMRG_W_DOCSIGNED">
+            <summary>Document is signed.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_SPLMRG_W_RMXFA">
+            <summary>XFA stream was not copied.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_SPLMRG_W_RMSUBMIT">
+            <summary>SubmitForm action was not copied.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_SPLMRG_W_PARTSUBMIT">
+            <summary>Partial SubmitForm action altered to submit all fields.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_SPLMRG_W_RMSIGANNOT">
+            <summary>Signature annotation was not copied.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_SPLMRG_W_RMVALUE">
+            <summary>Value or default value of field "%field%" was discarded due to field name collision.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_SPLMRG_W_MVFIELD">
+            <summary>Renamed field "%field%" to "%newname%" due to field name collision.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XFA_W_CHILDROOT">
+            <summary>The element '%qname%' must contain one single child element.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XFA_E_MISSELEM">
+            <summary>%XPath% :: Missing child element '%name%' in namespace '%ns%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XFA_E_FEATNSUP">
+            <summary>The feature '%name%' is not implemented.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XFA_W_INVVAL">
+            <summary>Invalid value '%value%' required is '%reqval%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XFA_E_INVSHORTCUT">
+            <summary>Invalid shortcut '%shortcut%' in SOM expression.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XFA_E_INVSOM">
+            <summary>Invalid SOM expression '%expression%'.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.XFA_E_SNSOM">
+            <summary>SOM expression '%expression%' does not yield a single node.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.VIEWER_E_SAVE_FILE">
+            <summary>Failed to save file %s.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I2P_W_OUTPUTINTENT">
+            <summary>Created CMYK color profile for PDF/A output intent.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I2P_W_SMASK">
+            <summary>Image soft mask removed in order to meet PDF/A-1 conformance.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_I2P_W_JPXDECODE">
+            <summary>JPEG2000 compression changed to JPEG in order to meet PDF/A-1 conformance.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_STMP_E_PSXML">
+            <summary>Invalid stamp xml data.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_STMP_E_PSSTAMP">
+            <summary>Invalid stamp description in ps:stamp.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_STMP_E_PSOP">
+            <summary>Invalid stamp content operator.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_CREATOR_E_FONTPROG">
+            <summary>The font program cannot be read.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFErrorCode.PDF_CREATOR_E_FONTNOTFOUND">
+            <summary>The font cannot be found.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfFormat">
+            <summary>The file format (header, trailer, objects, xref, streams) is corrupted.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfPDF">
+            <summary>The document doesn't conform to the PDF reference  (missing required entries, wrong value types, etc.).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfEncrypt">
+            <summary>The file is encrypted.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfColor">
+            <summary>The document contains device-specific color spaces.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfRendering">
+            <summary>The document contains illegal rendering hints (unknown intents, interpolation, transfer and halftone functions).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfAlternate">
+            <summary>The document contains alternate information (images).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfPostScript">
+            <summary>The document contains embedded PostScript code.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfExternal">
+            <summary>The document contains references to external content (reference XObjects, file attachments, OPI).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfFont">
+            <summary>The document contains fonts without embedded font programs or encoding information (CMAPs).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfUnicode">
+            <summary>The document contains fonts without appropriate character to Unicode mapping information (ToUnicode maps).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfTransp">
+            <summary>The document contains transparency.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfAnnot">
+            <summary>The document contains unknown annotation types.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfMultimedia">
+            <summary>The document contains multimedia annotations (sound, movies).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfPrint">
+            <summary>The document contains hidden, invisible, non-viewable or non-printable annotations.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfAppearance">
+            <summary>The document contains annotations or form fields with ambiguous or without appropriate appearances. </summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfAction">
+            <summary>The document contains actions types other than for navigation (launch, JavaScript, ResetForm, etc.).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfMetaData">
+            <summary>The document's meta data is either missing or inconsistent or corrupt.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfStructure">
+            <summary>The document doesn't provide appropriate logical structure information.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFConformanceCategory.eConfOptional">
+            <summary>The document contains optional content (layers).</summary>
+        </member>
+        <member name="T:Pdftools.Pdf.PDFCompression">
+            <summary>
+            Image codec
+            </summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprRaw">
+            <summary>No compression (raw). color depths 1-8, 24</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprJPEG">
+            <summary>Lossy DCT (Discrete Cosine Transform, JPEG) compression. color depths 8, 24</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprFlate">
+            <summary>Lossless flate (ZIP)compression. color depths 1-8, 24</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprLZW">
+            <summary>Lossless LZW (Lempel-Ziv-Welch) compression. color depths 2-8</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprGroup3">
+            <summary>Lossless CCITT Fax Group3 compression. bitonal</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprGroup3_2D">
+            <summary>Lossless CCITT Fax Group3 (2D) compression. bitonal</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprGroup4">
+            <summary>Lossless CCITT Fax Group4 compression. bitonal</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprJBIG2">
+            <summary>Lossless JBGI2 compression. bitonal</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprJPEG2000">
+            <summary>Lossy JPEG2000 compression. color depths 8, 24</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprTIFFJPEG">
+            <summary>Lossy TIFF embedded JPEG (6) compression</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprUnknown">
+            <summary>Unknown Compression</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFCompression.eComprDefault">
+            <summary>Default Compression. Based on file type, i.e. on extension</summary>
+        </member>
+        <member name="T:Pdftools.Pdf.PDFColorSpace">
+            <summary>
+            Color Space
+            </summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorGray">
+            <summary>One channel gray.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorGrayA">
+            <summary>Two channels gray and alpha.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorRGB">
+            <summary>Three channels red, green, blue.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorRGBA">
+            <summary>Four channels red, green, blue, alpha.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorCMYK">
+            <summary>Four channels cyan, magenta, yellow, black.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorYCbCr">
+            <summary>Three channels Luminance (Y) and Chroma (Cb, Cr)</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorYCbCrK">
+            <summary>Four channels Luminance (Y), Chroma (Cb, Cr) and black.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorPalette">
+            <summary>One channel palette indices (into an RGB color table).</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorLAB">
+            <summary>Three channels IEC LAB.</summary>
+        </member>
+        <member name="F:Pdftools.Pdf.PDFColorSpace.eColorOther">
+            <summary></summary>
+        </member>
+    </members>
+</doc>

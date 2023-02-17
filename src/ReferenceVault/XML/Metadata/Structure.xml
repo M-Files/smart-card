@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<structure xml:space="preserve">
+  <capabilities value="536">
+    <DescribeContent value="8" />
+    <MapSemantics value="16" />
+    <DescribeStructure value="512" />
+  </capabilities>
+  <languages>
+    <language code="" id="0" name="Default language" />
+  </languages>
+  <objtypes>
+    <objtype aliases="" builtin="true" external="false" guid="{4A190FFC-6A67-430A-8FA7-37BA2ED23D16}" id="2" name="Class groups" nameplural="Class groups" namesingular="Class group" realobj="false" />
+    <objtype aliases="" builtin="true" external="true" guid="{E396EBFC-5D0C-47A4-86A2-D27DAA479237}" id="6" name="Users" nameplural="Users" namesingular="User" realobj="false" />
+    <objtype aliases="" builtin="true" external="false" guid="{53F0C8FD-0BF0-47C4-8FA6-4C2D0DADB650}" id="0" name="Document" nameplural="Documents" namesingular="Document" realobj="true" />
+  </objtypes>
+  <propertydefs>
+    <propertydef aliases="" builtin="true" guid="{3E2BB7EB-C49E-4C8C-825C-CAE0AEBA9A06}" id="0" name="Name or title">
+      <datatype>
+        <Text />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{EAB2B9D9-809E-49A5-9FA6-4EA5C2802F8C}" id="20" name="Created">
+      <datatype>
+        <Timestamp />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{EA3BBB33-C76F-4108-9331-14BEFB909515}" id="25" name="Created by">
+      <datatype>
+        <Lookup isdefault="false" isowner="false" otid="6" />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{492A908E-02F7-47D1-9ECB-2C5D8F8D0142}" id="21" name="Last modified">
+      <datatype>
+        <Timestamp />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{63FC0676-A23A-4C1B-866C-7117D1B975D9}" id="23" name="Last modified by">
+      <datatype>
+        <Lookup isdefault="false" isowner="false" otid="6" />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{D0661E73-9451-4F52-AFFB-DBD34452992E}" id="24" name="Status changed">
+      <datatype>
+        <Timestamp />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{3DCEC688-50C5-4796-9417-B0DDE5CFF3A8}" id="22" name="Single file">
+      <datatype>
+        <Boolean />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{C6BECA16-3632-4D03-BE5F-E6B4A0D18738}" id="101" name="Class groups">
+      <datatype>
+        <MultiSelectLookup isdefault="false" isowner="false" otid="2" />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{D9BC5E8D-8006-423C-9832-CE095E36014A}" id="30" name="Size on server (this version)">
+      <datatype>
+        <Integer />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{87926D43-342B-4804-9891-52BEC6E6DA2B}" id="31" name="Size on server (all versions)">
+      <datatype>
+        <Integer />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{AE7DD3CE-55EE-4DE6-BE7E-0ABB433C6582}" id="32" name="Marked for archiving">
+      <datatype>
+        <Boolean />
+      </datatype>
+    </propertydef>
+    <propertydef aliases="" builtin="true" guid="{4ED05F25-56AC-4673-9389-92184044B69C}" id="89" name="Object changed">
+      <datatype>
+        <Timestamp />
+      </datatype>
+    </propertydef>
+  </propertydefs>
+  <namedacls />
+  <classes>
+    <class aliases="MFiles.SmartCard.Class.Signature" builtin="false" deleted="false" full="true" guid="{129EB023-7983-45BE-864E-4A3C2B0BCFA1}" id="2" name="Signature" otid="0">
+      <associatedproperties>
+        <property id="0" required="true" />
+        <property id="20" required="true" />
+        <property id="25" required="true" />
+        <property id="21" required="true" />
+        <property id="23" required="true" />
+        <property id="24" required="true" />
+        <property id="89" required="true" />
+        <property id="22" required="true" />
+        <property id="101" required="false" />
+        <property id="30" required="true" />
+        <property id="31" required="true" />
+        <property id="32" required="true" />
+      </associatedproperties>
+      <nameproperty id="0" />
+      <workflow forced="false" id="0" />
+      <acl>
+        <cached id="aclcache-2-1" />
+      </acl>
+    </class>
+  </classes>
+  <classgroups />
+  <workflows />
+  <states />
+  <useraccounts />
+  <usergroups>
+    <group aliases="" deleted="false" externalname="" guid="{C0038C58-FF9F-4D1B-80D9-407831486D35}" id="2" name="All internal and external users" />
+  </usergroups>
+  <viewdefs />
+  <eventhandlers />
+</structure>

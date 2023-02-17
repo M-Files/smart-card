@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{721000F5-1A08-4E41-A594-94D7BB6F852C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MFilesSmartCard</RootNamespace>
+    <AssemblyName>MFilesSmartCard</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.MFilesAPI, Version=7.0.0.0, Culture=neutral, PublicKeyToken=f1b4733f444f7ad0, processorArchitecture=MSIL">
+      <HintPath>..\..\redist\packages\MFiles.VAF.2.2.0.10\lib\net45\Interop.MFilesAPI.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MFiles.Crypto, Version=2.2.0.10, Culture=neutral, PublicKeyToken=fa007b370d17fe5e, processorArchitecture=MSIL">
+      <HintPath>..\..\redist\packages\MFiles.VAF.2.2.0.10\lib\net45\MFiles.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="MFiles.VAF, Version=2.2.0.10, Culture=neutral, PublicKeyToken=fa007b370d17fe5e, processorArchitecture=MSIL">
+      <HintPath>..\..\redist\packages\MFiles.VAF.2.2.0.10\lib\net45\MFiles.VAF.dll</HintPath>
+    </Reference>
+    <Reference Include="MFiles.VAF.Configuration, Version=2.2.0.10, Culture=neutral, PublicKeyToken=fa007b370d17fe5e, processorArchitecture=MSIL">
+      <HintPath>..\..\redist\packages\MFiles.VAF.2.2.0.10\lib\net45\MFiles.VAF.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="MFiles.VAF.Configuration.Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=fa007b370d17fe5e, processorArchitecture=MSIL">
+      <HintPath>..\..\redist\packages\MFiles.VAF.2.2.0.10\lib\net45\MFiles.VAF.Configuration.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\redist\packages\MFiles.VAF.2.2.0.10\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ConversionContext.cs" />
+    <Compile Include="Configuration\SignerConfiguration.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="InternalResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyValueEqualityComparer.cs" />
+    <Compile Include="SignatureVerificationFailedException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TempFile.cs" />
+    <Compile Include="TemporaryCulture.cs" />
+    <Compile Include="VaultApplication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appdef.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MFilesAPI">
+      <Guid>{B9C079AA-92DD-4FB4-A0E0-AA3198955B45}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MFiles.SmartCard.Configuration.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InternalResources.fi-FI.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InternalResources.fi-FI.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternalResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InternalResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\shared\JsonHelper\JsonHelper.csproj">
+      <Project>{edced9b3-f6ad-442c-b927-8f68b70adf0e}</Project>
+      <Name>JsonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\shared\PdfToolsForUIExt\PdfToolsForUIExt.csproj">
+      <Project>{faf76017-de0e-4df4-ae49-742a33cb6a2b}</Project>
+      <Name>PdfToolsForUIExt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\shared\PdfTools\PdfTools.csproj">
+      <Project>{39eb0d8f-b52d-43ac-8e5f-f4743db5ea8f}</Project>
+      <Name>PdfTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

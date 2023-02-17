@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<application
+			type="server-application"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xsi:noNamespaceSchemaLocation="http://www.m-files.com/schemas/appdef-server-v1.xsd">
+  <guid>0AE95BC7-0565-421C-A40F-3F93742A7FCE</guid>
+  <name>M-Files SmartCard</name>
+  <description>M-Files SmartCard vault application</description>
+  <publisher>M-Files Corporation</publisher>
+  <version>1.4.3.9</version>
+  <copyright>Copyright M-Files Corporation</copyright>
+  <required-mfiles-version>11.1.4310.92</required-mfiles-version>
+  <extension-objects>
+    <extension-object>
+      <name>MFilesSmartCard</name>
+      <assembly>MFilesSmartCard.dll</assembly>
+      <class>MFilesSmartCard.VaultApplication</class>
+      <installation-method>Install</installation-method>
+      <uninstallation-method>Uninstall</uninstallation-method>
+      <initialization-method>Initialize</initialization-method>
+      <uninitialization-method>Uninitialize</uninitialization-method>
+      <start-operations-method>StartOperations</start-operations-method>
+    </extension-object>
+  </extension-objects>
+</application>

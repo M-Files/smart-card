@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE archive [
+	<!ENTITY prologue SYSTEM "Metadata\Prologue.xml">
+	<!ENTITY structure SYSTEM "Metadata\Structure.xml">
+	<!ENTITY content1 SYSTEM "Metadata\Content1.xml">
+]>
+<archive guid="{DCDC80E8-BAC5-4038-B3B4-C268CD7CE414}" version="1" build="10.2.3920.103" oldestcompatiblebuild="0.0.0.0">
+  <features>
+    <feature id="4D00ED25-C6A1-42ab-8BBA-54CDA5821375" />
+  </features>
+  <timestamp value="2015-10-23T07:11:02.570Z" />
+  <delta applied="false" />
+  <vault guid="{7388F400-D46B-4830-9B5C-A63880F9C56A}" extendedmetadatadrivenpermissions="true" />
+  <statistics objectcount="0" vlitemcount="0" />
+  <flags>
+    <MultipleArchivesInTargetLocation />
+    <UseSearchFilter />
+  </flags>
+  <searchconds>Object flag one of 'None, Shortcut' AND Not deleted</searchconds>
+&prologue;
+&structure;
+&content1;
+</archive>

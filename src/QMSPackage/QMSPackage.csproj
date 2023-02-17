@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Build the M-Files QMS Server Extension package. All UI Ext. application packages were placed inside the server extension. -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectGuid>{925048DD-7926-4601-AEA0-49E7F0A84BB5}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Target Name="Build" Inputs="..\bin\$(Configuration)\M-Files_SmartCard\**\*.*" Outputs="..\bin\$(Configuration)\MFilesSmartCard.mfappx" DependsOnTargets="MFilesSmartCard_UI;MFilesSmartCard_Module">
+    <Exec WorkingDirectory="..\bin\$(Configuration)\" Command="..\..\QMSPackage\7za.exe a -xr!*.sln -tzip MFilesSmartCard.mfappx M-Files_SmartCard\" />
+  </Target>
+  <!-- Rebuild is the Build -->
+  <Target Name="ReBuild" Inputs="..\bin\$(Configuration)\M-Files_SmartCard\**\*.*" Outputs="..\bin\$(Configuration)\MFilesSmartCard.mfappx" DependsOnTargets="Build">
+  </Target>
+  <!-- Clean -->
+  <Target Name="Clean" Inputs="..\bin\$(Configuration)\M-Files_SmartCard\**\*.*" Outputs="..\bin\$(Configuration)\MFilesSmartCard.mfappx">
+    <RemoveDir Directories="..\bin\$(Configuration)\M-Files_SmartCard" />
+    <Delete Files="..\bin\$(Configuration)\MFilesSmartCard.mfappx" />
+  </Target>
+  <!--  Collect managed -->
+  <Target Name="MFilesSmartCard_Bins">
+    <ItemGroup>
+      <UIExt Include="..\FileSigner\*.*" />
+      <Images Include="..\FileSigner\Images\*" />
+      <LibPdfNet Include="..\shared\PdfTools\libpdfNET.dll;..\shared\PdfTools\PdfSecureNET.dll;" />
+      <PdfToolsUIExt Include="..\shared\PdfToolsForUIExt\bin\$(Configuration)\**\*.dll;..\shared\PdfToolsForUIExt\bin\$(Configuration)\*.exe; ..\shared\PdfToolsForUIExt\bin\$(Configuration)\*.pdb" />
+      <PdfSecureAPI64 Include="..\shared\PdfTools\bin\$(Configuration)\redist\x64\PdfSecureAPI.dll" />
+      <PdfSecureAPI86 Include="..\shared\PdfTools\bin\$(Configuration)\redist\x86\PdfSecureAPI.dll" />
+    </ItemGroup>
+   <Copy SourceFiles="@(UIExt)" DestinationFolder="..\bin\$(Configuration)\FileSigner\" />
+    <Copy SourceFiles="@(Images)" DestinationFolder="..\bin\$(Configuration)\FileSigner\images\" />
+    <Copy SourceFiles="@(LibPdfNet);@(PdfToolsUIExt)" DestinationFolder="..\bin\$(Configuration)\FileSigner\managed\%(RecursiveDir)" />
+  </Target>
+  <!--  Signer Module -->
+  <Target Name="MFilesSmartCard_Module">
+    <ItemGroup>
+      <ModuleFiles Include="..\SignerModule\bin\$(Configuration)\*;..\SignerModule\bin\$(Configuration)\**\MFilesSmartCard.resources.*" />
+      <PdfTools Include="..\SignerModule\bin\$(Configuration)\**\MFiles.PdfTools.*; ..\SignerModule\bin\$(Configuration)\**\MFiles.Internal.*" />
+      <PdfSecureAPI64 Include="..\shared\PdfTools\bin\$(Configuration)\redist\x64\PdfSecureAPI.dll" />
+      <PdfSecureAPI86 Include="..\shared\PdfTools\bin\$(Configuration)\redist\x86\PdfSecureAPI.dll" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ModuleFiles)" DestinationFolder="..\bin\$(Configuration)\M-Files_SmartCard\%(RecursiveDir)" />
+    <Copy SourceFiles="@(PdfSecureAPI64)" DestinationFolder="..\bin\$(Configuration)\M-Files_SmartCard\redist\x64" />
+    <Copy SourceFiles="@(PdfSecureAPI86)" DestinationFolder="..\bin\$(Configuration)\M-Files_SmartCard\redist\x86" />
+    <Copy SourceFiles="@(PdfTools)" DestinationFolder="..\bin\$(Configuration)\M-Files_SmartCard\%(RecursiveDir)" />
+  </Target>
+  <!-- Build the UI Ext. application package. -->
+  <Target Name="MFilesSmartCard_UI" Inputs="..\Builder\Output\FileSigner\**\*.*" Outputs="..\bin\$(Configuration)\M-Files_SmartCard\FileSigner.mfappx" DependsOnTargets="MFilesSmartCard_Bins">
+    <Delete Files="..\bin\$(Configuration)\M-Files_SmartCard\FileSigner.mfappx">
+    </Delete>
+    <Exec Command="7za.exe a -xr!*.sln -tzip ..\bin\$(Configuration)\FileSigner.mfappx ..\bin\$(Configuration)\FileSigner\" />
+    <Copy SourceFiles="..\bin\$(Configuration)\FileSigner.mfappx" DestinationFolder="..\bin\$(Configuration)\M-Files_SmartCard\" />
+  </Target>
+</Project>

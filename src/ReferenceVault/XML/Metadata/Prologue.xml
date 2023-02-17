@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<prologue xml:space="preserve">
+  <aclcache>
+    <acl id="aclcache-2-1">
+      <aclcomponent>
+        <ace id="-2">
+          <usersandgroups>
+            <group id="2" name="All internal and external users" />
+          </usersandgroups>
+          <rights>
+            <see pos="1" value="Allowed" />
+            <attachobjects pos="5" value="NotDefined" />
+          </rights>
+        </ace>
+      </aclcomponent>
+    </acl>
+  </aclcache>
+</prologue>

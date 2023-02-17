@@ -1,0 +1,86 @@
+﻿{
+    "this-Comment": "M-Files SmartCard: Default configuration for PDF Processor",
+    "Enabled": true,
+    "StructureFree": true,
+    "Renditions": [
+        {
+            "Key": "Rendition",
+            "Name": "Rendition",
+            "InplaceFileReplace": false,
+            "OutputClass": "MFiles.SmartCard.Class.Signature",
+            "NameFormat": "Sign:{1}",
+            "EnabledTargets": [],
+            "IgnoreConditions": [],
+            "ExactVersion": true,
+            "VisibleOnlyToCaller": true,
+            "Parts": [
+                {
+                    "Mode": "Report",
+                    "MfdOnReadyMode": "TakeFirstPdf",
+                    "Reference": [],
+                    "RenditionInstruction": "",
+                    "RenditionKey": "",
+                    "Xslt": "",
+                    "IgnoreConditions": [],
+                    "AltConditions": [],
+                    "AltRenditionInstruction": "",
+                    "AltRenditionKey": ""
+                },
+                {
+                    "Mode": "Report",
+                    "MfdOnReadyMode": "TakeFirstPdf",
+                    "Reference": [],
+                    "RenditionInstruction": "",
+                    "RenditionKey": "",
+                    "Xslt": "NoFilePropertyPage.xslt",
+                    "IgnoreConditions": [
+                        {
+                            "conditionType": "equal",
+                            "expression": {
+                                "type": "fileValue",
+                                "fileType": "hasFiles",
+                                "indirectionLevels": []
+                            },
+                            "typedValue": {
+                                "dataType": "boolean",
+                                "value": {
+                                    "boolean": true
+                                }
+                            }
+                        }
+                    ],
+                    "AltConditions": [],
+                    "AltRenditionInstruction": "",
+                    "AltRenditionKey": ""
+                },
+                {
+                    "Mode": "Convert",
+                    "MfdOnReadyMode": "TakeAllPdfs",
+                    "Reference": [],
+                    "RenditionInstruction": "",
+                    "RenditionKey": "",
+                    "Xslt": "",
+                    "IgnoreConditions": [
+                        {
+                            "conditionType": "equal",
+                            "expression": {
+                                "type": "fileValue",
+                                "fileType": "hasFiles",
+                                "indirectionLevels": []
+                            },
+                            "typedValue": {
+                                "dataType": "boolean",
+                                "value": {
+                                    "boolean": false
+                                }
+                            }
+                        }
+                    ],
+                    "AltConditions": [],
+                    "AltRenditionInstruction": "",
+                    "AltRenditionKey": ""
+                }
+            ]
+        }
+    ]
+}

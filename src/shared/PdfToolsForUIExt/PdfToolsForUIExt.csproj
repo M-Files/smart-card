@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FAF76017-DE0E-4DF4-AE49-742A33CB6A2B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MFiles.PdfTools.UIExt</RootNamespace>
+    <AssemblyName>MFiles.PdfTools.UIExt</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Builder\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sign.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\SharedLibStrongNameKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\redist\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationErrorCodes.cs" />
+    <Compile Include="BackgroundProcessLauncher.cs" />
+    <Compile Include="Configuration\Certificate.cs" />
+    <Compile Include="Configuration\Authentication.cs" />
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Configuration\DeserializationContext.cs" />
+    <Compile Include="Configuration\FixedProperty.cs" />
+    <Compile Include="Configuration\Helper.cs" />
+    <Compile Include="Configuration\PdfTools.cs" />
+    <Compile Include="Configuration\SerializationContext.cs" />
+    <Compile Include="CultureHelper.cs" />
+    <Compile Include="Environment.cs" />
+    <Compile Include="ErrorObject.cs" />
+    <Compile Include="EvidencePdf.cs" />
+    <Compile Include="Exceptions\NewObjectVersionException.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="InternalResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternalResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\IssuedByNotSpecifiedException.cs" />
+    <Compile Include="Launcher.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Progress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Progress.Designer.cs">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Configuration\SubjectRfc822Name.cs" />
+    <Compile Include="PublicResources.cs" />
+    <Compile Include="ReadyFile.cs" />
+    <Compile Include="TemporaryCulture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SharedLibStrongNameKey.snk">
+      <Link>SharedLibStrongNameKey.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JsonHelper\JsonHelper.csproj">
+      <Project>{edced9b3-f6ad-442c-b927-8f68b70adf0e}</Project>
+      <Name>JsonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PdfTools\PdfTools.csproj">
+      <Project>{39eb0d8f-b52d-43ac-8e5f-f4743db5ea8f}</Project>
+      <Name>PdfTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Win32PInvoke\Win32PInvoke.csproj">
+      <Project>{f1ce2bfa-92b3-46fa-b87a-31066f45136d}</Project>
+      <Name>Win32PInvoke</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InternalResources.fi-FI.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternalResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InternalResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternalResources.sv-SE.resx" />
+    <EmbeddedResource Include="Progress.fi-FI.resx" />
+    <EmbeddedResource Include="Progress.resx">
+      <DependentUpon>Progress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Progress.sv-SE.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sign.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

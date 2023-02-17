@@ -1,0 +1,858 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PdfSecureNET</name>
+    </assembly>
+    <members>
+        <member name="T:Pdftools.PdfSecure.Secure">
+             <summary>
+             Base class for PDF handling.
+            
+             </summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.#ctor">
+            <summary>simple constructor</summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.#ctor(System.IntPtr)">
+            <summary>internal constructor</summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.Finalize">
+            <summary>simple deconstructor</summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.Dispose">
+            <summary>
+            Destroy the internal representation of the object.
+            After disposing, the object should not be used anymore.
+            </summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SetLicenseKey(System.String)">
+             <summary>
+             Set the license key
+            
+             </summary>
+            
+             <param name="licenseKey">
+             The license key
+             </param>
+            
+             <returns>True if the license is valid</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.GetLicenseIsValid">
+             <summary>
+             Check if the license is valid
+            
+             </summary>
+            
+             <returns>True if the license is valid</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.Terminate">
+             <summary>
+             This function frees all global resources.
+            
+             This must be called before exiting the main program. Afterwards, the calling process may not use any other method of this class.
+            
+             </summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.Close">
+             <summary>
+             Closes the currently open input file(s).
+            
+             </summary>
+            
+             <returns>True: The file could be closed</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.GetPdf">
+             <summary>
+             Returns the output file previously stored in memory.
+            
+             </summary>
+            
+             <returns>A byte array containing the PDF document.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.BeginSession(System.String)">
+             <summary>
+             Begin a signature session
+            
+             </summary>
+            
+             <param name="provider">
+             The provider string
+            
+             </param>
+            
+             <returns>True: The session could be created.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.EndSession">
+             <summary>
+             End a signature session
+            
+             </summary>
+            
+             <returns>True: The session could be destroyed.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SetSessionPropertyString(System.String,System.String)">
+             <summary>
+             Configure the cryptographic session. The properties are provider-specific.
+             Properties have to be set before starting the session and are deleted when terminating the session.
+            
+             </summary>
+            
+             <param name="name">
+             The name of the property.
+            
+             </param>
+             <param name="value">
+             The value of the property.
+            
+             </param>
+            
+             <returns></returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SetSessionPropertyBytes(System.String,System.Byte[])">
+             <summary>
+             Configure the cryptographic session. The properties are provider-specific.
+             Properties have to be set before starting the session and are deleted when terminating the session.
+            
+             </summary>
+            
+             <param name="name">
+             The name of the property.
+            
+             </param>
+             <param name="value">
+             The value of the property.
+            
+             </param>
+            
+             <returns></returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.TestSession">
+             <summary>
+             Test, if the session is still alive
+            
+             </summary>
+            
+             <returns></returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.Open(System.String,System.String)">
+             <summary>
+             Opens an input PDF file.
+            
+             It makes the objects contained in the PDF document accessible. If the document is already open, it is closed first.
+            
+             </summary>
+            
+             <param name="fileName">
+             Source file name.
+             The file name and optionally the file path, drive or server string according to the operating systems file name specification rules of the input file.
+            
+             </param>
+             <param name="password">
+             The user or the owner password of the encrypted input PDF document.
+             If this parameter is left out, null or an empty string the default (no password) is used.
+            
+             </param>
+            
+             <returns>True: The file could successfully be opened. False: The file does not exist, it is corrupt, or the password is invalid</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.OpenMem(System.Byte[],System.String)">
+             <summary>
+             Opens an input PDF memory block.
+            
+             It makes the objects contained in the PDF document accessible. If the document is already open it is closed first.
+            
+             </summary>
+            
+             <param name="memBlock">
+             Memory block containing the file as one dimensional byte array.
+            
+             </param>
+             <param name="password">
+             The user or the owner password of the encrypted input PDF document.
+             If this parameter is left out, null or an empty string the default (no password) is used.
+            
+             </param>
+            
+             <returns>True: The document could successfully be opened. False: The document does not exist, it is corrupt, or the password is not valid</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SetInfoEntry(System.String,System.String)">
+             <summary>
+             Add a key / value pair to the document information.
+            
+             </summary>
+            
+             <param name="key">
+             Key such as Creator, Subject, etc.
+            
+             </param>
+             <param name="value">
+             Value corresponding to the key.
+            
+             </param>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.GetInfoEntry(System.String)">
+             <summary>
+             Get the key / value from the document information.
+            
+             </summary>
+            
+             <param name="key">
+             Key such as Creator, Subject, etc.
+            
+             </param>
+            
+             <returns>Value corresponding to the key.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SaveAs(System.String,System.String,System.String,Pdftools.Pdf.PDFPermission,System.Int32,System.String,System.String)">
+             <summary>
+             Create an output PDF document with security settings and save the content from the input file to the output file.
+            
+             To not encrypt the output document, use PermNoEncryption or –1 and no user and owner password.
+             In order to allow high quality printing, flags PermPrint and PermDigitalPrint need to be set.
+            
+             </summary>
+            
+             <param name="fileName">
+             The PDF output file name and optionally the file path, drive or server string according to the operating systems file name specification rules.
+            
+             </param>
+             <param name="userPwd">
+             Set the user password of the PDF document.
+             If this parameter is left out, null or an empty string the default (no password) is used.
+            
+             </param>
+             <param name="ownerPwd">
+             Set the owner password of the PDF document.
+             If this parameter is left out, null or an empty string the default (no password) is used.
+            
+             </param>
+             <param name="permissionFlags">
+             Permissions to set for Encrypted PDF files.
+             By default no permissions are granted. see the enum definition for permissions that can be granted.
+            
+             </param>
+             <param name="keyLength">
+             Length of the encryption key.
+             Due to the nature of the MD5 algorithm, the maximum length is limited to 128 bits.
+             The minimum is 40 and it is required to be a multiple of 8. The two most commonly used
+             values are 40 (standard encryption) and 128 (requires Acrobat 5 or higher).
+             Keep in mind that Acrobat only supports 40 and 128 bit encryption. Other tools, such
+             as the 3-Heights™ tools also support other encryption key lengths. The default value
+             is calculated based on the selected permission flags.
+            
+             </param>
+             <param name="strF">
+             String crypt filter.
+             Supported values are None, V2, AESV2. Supported crypt filter:
+             ·	None: The application does not decrypt data.
+             ·	V2: (PDF 1.1, default) The application asks the security handler for the encryption
+             key and implicitly decrypts data using the RC4 algorithm.
+             ·	AESV2: (PDF 1.6) The application asks the security handler for the encryption key
+             and implicitly decrypts data using the AES algorithm.
+             See also PDF Reference, version 1.6, chapter 3.5.4:
+             http://www.pdf-tools.com/public/downloads/pdf-reference/pdfreference16.pdf
+            
+             </param>
+             <param name="stmF">
+             Stream crypt filter
+             Supported values are None, V2 (default), AESV2.
+             Note that Acrobat requires the stream crypt filter to be equal to the string crypt
+             filter, e.g. both must be RC4 or AES. Other tools, such as the 3-Heights PDF Tools do
+             not have this limitation.
+            
+             </param>
+            
+             <returns>True: The file could successfully be saved. False: The file could not be created</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SaveInMemory(System.String,System.String,Pdftools.Pdf.PDFPermission,System.Int32,System.String,System.String)">
+             <summary>
+             Save the output PDF in memory
+            
+             After the Close() call it can be accessed using the method GetPDF().
+             To not encrypt the output document, use PermNoEncryption or –1 and no user and owner password.
+             In order to allow high quality printing, flags PermPrint and PermDigitalPrint need to be set.
+            
+             </summary>
+            
+             <param name="userPwd">
+             Set the user password of the PDF document.
+             If this parameter is left out, null or an empty string the default (no password) is used.
+            
+             </param>
+             <param name="ownerPwd">
+             Set the owner password of the PDF document.
+             If this parameter is left out, null or an empty string the default (no password) is used.
+            
+             </param>
+             <param name="permissionFlags">
+             Permissions to set for Encrypted PDF files.
+             By default no permissions are granted. see the enum definition for permissions that can be granted.
+            
+             </param>
+             <param name="keyLength">
+             Length of the encryption key.
+             Due to the nature of the MD5 algorithm, the maximum length is limited to 128 bits.
+             The minimum is 40 and it is required to be a multiple of 8. The two most commonly used
+             values are 40 (standard encryption) and 128 (requires Acrobat 5 or higher).
+             Keep in mind that Acrobat only supports 40 and 128 bit encryption. Other tools, such
+             as the 3-Heights™ tools also support other encryption key lengths. The default value
+             is calculated based on the selected permission flags.
+            
+             </param>
+             <param name="strF">
+             String crypt filter.
+             Supported values are None, V2, AESV2. Supported crypt filter:
+             ·	None: The application does not decrypt data.
+             ·	V2: (PDF 1.1, default) The application asks the security handler for the encryption
+             key and implicitly decrypts data using the RC4 algorithm.
+             ·	AESV2: (PDF 1.6) The application asks the security handler for the encryption key
+             and implicitly decrypts data using the AES algorithm.
+             See also PDF Reference, version 1.6, chapter 3.5.4:
+             http://www.pdf-tools.com/public/downloads/pdf-reference/pdfreference16.pdf
+            
+             </param>
+             <param name="stmF">
+             Stream crypt filter
+             Supported values are None, V2 (default), AESV2.
+             Note that Acrobat requires the stream crypt filter to be equal to the string crypt
+             filter, e.g. both must be RC4 or AES. Other tools, such as the 3-Heights PDF Tools do
+             not have this limitation.
+            
+             </param>
+            
+             <returns>True: The document could successfully be saved in memory. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.AddSignature(Pdftools.PdfSecure.Signature)">
+             <summary>
+             Add a digital signature to the document.
+            
+             The signature is defined using a PdfSignature object. Must be called prior to SaveAs or SaveInMemory.
+            
+             </summary>
+            
+             <param name="signature">
+             Digital signature to add.
+             The properties of the signature must be set before it is added.
+            
+             </param>
+            
+             <returns>True: Signature could successfully be added to the document. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.AddDocMDPSignature(Pdftools.PdfSecure.Signature,System.Int16)">
+             <summary>
+             Add a MDP (modification detection and prevention) signature to the document.
+            
+             The signature is defined using a PdfSignature object. Must be called prior to SaveAs or SaveInMemory.
+            
+             </summary>
+            
+             <param name="signature">
+             Digital signature to add.
+             The properties of the signature must be set before it is added.
+            
+             </param>
+             <param name="accessPermissions">
+             The access permissions granted for this document.
+             1 No changes to the document are permitted; any change to the document
+             invalidates the signature.
+             2 Permitted changes are filling in forms, instantiating page templates,
+             and signing; other changes invalidate the signature.
+             3 Permitted changes are the same as for 2, as well as annotation creation,
+             deletion, and modification; other changes invalidate the signature.
+            
+             </param>
+            
+             <returns>True: Signature could successfully be added to the document. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.AddSignatureField(Pdftools.PdfSecure.Signature)">
+             <summary>
+             Add a signature field only (which is meant to be signed manual in a later step).
+            
+             Must be called prior to SaveAs or SaveInMemory.
+            
+             </summary>
+            
+             <param name="signature">
+             Digital signature from which the field is created.
+             The properties of the signature must be set before it is added.
+            
+             </param>
+            
+             <returns>True: Field could successfully be added to the document. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SignSignatureField(Pdftools.PdfSecure.Signature)">
+             <summary>
+             Sign a signature field which has been added in a previous step.
+            
+             Must be called prior to SaveAs or SaveInMemory.
+            
+             </summary>
+            
+             <param name="signature">
+             Digital signature to sign.
+             The properties of the signature must be set before it is signed.
+            
+             </param>
+            
+             <returns>True: Field could successfully be signed. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.AddPreparedSignature(Pdftools.PdfSecure.Signature)">
+             <summary>
+             Add a signature field including an appearance but without a digital signature.
+            
+             Must be called prior to SaveAs or SaveInMemory and should only be used in combination with SignPreparedSignature.
+            
+             </summary>
+            
+             <param name="signature">
+             Digital signature to create the field and appearance from.
+             The properties of the signature must be set before it is added.
+            
+             </param>
+            
+             <returns>True: The signature could successfully be prepared. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.AddTimeStampSignature(Pdftools.PdfSecure.Signature)">
+             <summary>
+             Add a time stamp signature to the document.
+            
+             The signature is defined using a PdfSignature object. Must be called prior to SaveAs or SaveInMemory.
+            
+             </summary>
+            
+             <param name="signature">
+             Digital signature to add.
+             The properties of the signature must be set before it is added.
+             The TimeStampURL property is required.
+            
+             </param>
+            
+             <returns>True: Signature could successfully be added to the document. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.GetSignature(System.Int32)">
+             <summary>
+             </summary>
+            
+             <param name="index">
+             Index of the selected signature in the document (0, n-1, where n is the total number of signatures in the document). See GetSignatureCount().
+            
+             </param>
+            
+             <returns>The selected signature or null if no such signature exists.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SignPreparedSignature(Pdftools.PdfSecure.Signature)">
+             <summary>
+             </summary>
+            
+             <param name="signature">
+             Digital signature to add. Must be the same signature as used in AddPreparedSignature.
+             </param>
+            
+             <returns>True: The signature could successfully be added to the document. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.ValidateSignature(Pdftools.PdfSecure.Signature)">
+             <summary>
+             Validate an existing digital signature.
+            
+             </summary>
+            
+             <param name="signature">
+             Digital signature to validate.
+             </param>
+            
+             <returns>True: The digital signature is valid. False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.GetRevisionCount">
+             <summary>
+             The number of revisions in a document.
+            
+             </summary>
+            
+             <returns>The number of revisions in a document.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.GetRevision(System.Int16)">
+             <summary>
+             Get the file blob for a specific revision.
+            
+             </summary>
+            
+             <param name="iRevision">
+             The revision number (beginning with 0).
+             </param>
+            
+             <returns>The file blob for a specific revision.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.GetMetadata">
+             <summary>
+             Get the XMP metadata of the input document as a byte array
+            
+             </summary>
+            
+             <returns>The XMP metadata of the input document as a byte array</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SetMetadata(System.String)">
+             <summary>
+             </summary>
+            
+             <param name="srcFileName">
+             File to read metadata from.
+             </param>
+            
+             <returns>True on successfully setting the metadata, false otherwise</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.SetMetadataStream(System.IO.Stream)">
+             <summary>
+             </summary>
+            
+             <param name="stream">
+             Stream to read metadata from.
+             </param>
+            
+             <returns>True on successfully setting the metadata, false otherwise</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.AddStamps(System.String)">
+             <summary>
+             Add stamps.
+            
+             Must be called prior to SaveAs or SaveInMemory.
+            
+             </summary>
+            
+             <param name="fileName">
+             The name of the xml file the stamps are loaded from.
+            
+             </param>
+            
+             <returns>True: The file could successfully be opened. False: The file does not exist</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Secure.AddStampsMem(System.Byte[])">
+             <summary>
+             Add stamps.
+            
+             Must be called prior to SaveAs or SaveInMemory.
+            
+             </summary>
+            
+             <param name="memBlock">
+             The memory block containing the xml data the stamps are loaded from.
+            
+             </param>
+            
+             <returns>True on success</returns>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Secure.ErrorCode">
+             <summary>
+             Contains the latest error code.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Secure.ErrorMessage">
+             <summary>
+             The message describing the last error that happened while processing.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Secure.SignatureCount">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Secure.NoCache">
+             <summary>
+             Disable Cache for CRL and OCSP
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Secure.ForceEncryption">
+             <summary>
+             Force encryption to allow encryption of PDF/A files.
+            
+             The output file&apos;s conformance is downgraded to PDF.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Secure.Linearize">
+             <summary>
+             Optimize the output for the web.
+            
+             </summary>
+        </member>
+        <member name="T:Pdftools.PdfSecure.Signature">
+             <summary>
+             Digital Sinature.
+            
+             This interface allows creating a signature and setting its position and appearance.
+             The visual part of the signature consists of two (multi-line) texts.
+             The string of both texts are generated automatically based on the signature properties if not set manually.
+            
+             </summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Signature.#ctor">
+            <summary>simple constructor</summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Signature.#ctor(System.IntPtr)">
+            <summary>internal constructor</summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Signature.Finalize">
+            <summary>simple deconstructor</summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Signature.Dispose">
+            <summary>
+            Destroy the internal representation of the object.
+            After disposing, the object should not be used anymore.
+            </summary>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Signature.GetDocumentHasBeenModified">
+             <summary>
+             </summary>
+            
+             <returns>True if document was modified, False otherwise.</returns>
+        </member>
+        <member name="M:Pdftools.PdfSecure.Signature.GetHasSignature">
+             <summary>
+             </summary>
+            
+             <returns>True if the signature has an actual digital signature, False otherwise.</returns>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.PageNo">
+             <summary>
+             The page number where the signature is to be added to the document.
+            
+             If an invalid page number is set, it is added to the last page. Default: -1 (last page).
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.FillColor">
+             <summary>
+             RGB color of the signature&apos;s background.
+            
+             In order to not set a color, i.e. keep the rectangle transparent, set the FillColor to –1.
+             This is particularly useful in combination with adding an image to the signature.
+             Default: 16761024 (red = 192, green = 192, blue = 255)
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.StrokeColor">
+             <summary>
+             RGB color of the signature&apos;s border line.
+            
+             In order to not set a color, i.e. keep it transparent, set the StrokeColor to –1.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.FontSize1">
+             <summary>
+             The font size of the Text1.
+            
+             Default: 16
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.FontSize2">
+             <summary>
+             The font size of the Text2.
+            
+             Default: 8
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.LineWidth">
+             <summary>
+             Thickness of the line surrounding the visual signature.
+            
+             Default: 2
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Rect">
+             <summary>
+             Position and size of the digital signature annotation.
+            
+             The default is in the lower left corner. The units are PDF points (1 point = 1/72 inch, A4 = 595x842 points, Letter = 612x792 points).
+             The position is defined by the four values x, y, width, height.
+             To place an invisible signature set this property to Null.
+             Default: [10, 10, 210, 60]
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Date">
+             <summary>
+             Date when the signature is added.
+            
+             If not set, the current time and date is used. The format of the date is: &quot;D:YYYYMMDDHHMMSSZ&quot;.
+             D:	Header of Date Format
+             YYYY	year
+             MM	month
+             DD	day
+             HH 	hour
+             MM	minutes
+             SS	seconds
+             Z	UTC (Zulu) Time
+             Example for December 17, 2007, 14:15:13, GMT: &quot;D:20071217141513Z&quot;.
+             Note, this property is set at the time when the signature is applied to the document, it
+             Default: &quot;D:00000000000000Z&quot; (set to current date when signature is added)
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.ImageFileName">
+             <summary>
+             Path to an image file to be added to the signature.
+            
+             Image is centered and scaled down proportionally to fit into the given rectangle.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Name">
+             <summary>
+             Name of the certificate. The certificate must be available in the store.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Email">
+             <summary>
+             Email address of the signer.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Issuer">
+             <summary>
+             Issuer of the certificate. The certificate must be available in the store.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.SerialNumber">
+             <summary>
+             Serial number of the certificate. The certificate must be available in the store.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.EmbedRevocationInfo">
+             <summary>
+             If true (and the certificate contains an OCSP server URL) then the OCSP responses or CRLs are embedded in the signature.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Provider">
+             <summary>
+             The cryptographic provider.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Store">
+             <summary>
+             The name of the certificate store, e.g. MY, ROOT, CA (default: MY).
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.StoreLocation">
+             <summary>
+             The location of the certificate store (0: local system, 1: current user, default: 1)
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.TimeStampURL">
+             <summary>
+             The URL of a time stamp server, e.g. http://tsa.domain.com:8080/tsp
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.TimeStampCredentials">
+             <summary>
+             The credentials of a time stamp server, e.g. username:password
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.ProxyURL">
+             <summary>
+             The URL of a web proxy server, e.g. http://proxy.local.com:8080
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.ProxyCredentials">
+             <summary>
+             The credentials of a web proxy server, e.g. username:password
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Reason">
+             <summary>
+             Why the digital signature was added. Not required in order to create a valid signature.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.ContactInfo">
+             <summary>
+             Information provided by the signer to enable a recipient to contact the signer to verify the signature, e.g. a phone number.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Location">
+             <summary>
+             Physical location where the signature was added, e.g. &apos;Zurich, Switzerland&apos;.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.FontName1">
+             <summary>
+             Path to the font name used in upper text, i.e. the text that is set by the property Text1.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.FontName2">
+             <summary>
+             Path to the font name used in lower text, i.e. the text that is set by the property Text2.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Text1">
+             <summary>
+             Upper text line of the visible signature. If blank, signature name is used.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Text2">
+             <summary>
+             Lower text line of the visible signature.
+            
+             If blank, a text three-line text is constructed that consists of:
+             * Statement who applied to signature
+             * Reason
+             * Date
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.Filter">
+             <summary>
+             Upper text line of the visible signature. If blank, signature name is used.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.SubFilter">
+             <summary>
+             Upper text line of the visible signature. If blank, signature name is used.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.FieldName">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.SignerFingerprint">
+             <summary>
+             The fingerprint of the signer certificate.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.SignerFingerprintStr">
+             <summary>
+             The fingerprint of the signer certificate as hex string.
+            
+             </summary>
+        </member>
+        <member name="P:Pdftools.PdfSecure.Signature.TimeStampFingerprint">
+             <summary>
+             The fingerprint of the time stamp certificate.
+            
+             </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<application type="client-application" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:noNamespaceSchemaLocation="http://www.m-files.com/schemas/appdef-client-v2.xsd">
+	<guid>B3735047-8DF9-4d84-AB68-8ED9F290BFF1</guid>
+	<name>M-Files SmartCard Desktop UI</name>
+	<version>1.4.3.9</version>
+	<description>M-Files SmartCard user interface for M-Files Desktop</description>
+	<publisher>M-Files Corporation</publisher>
+	<copyright>(c) M-Files Corporation 2016</copyright>
+	<required-mfiles-version>11.1.4310.92</required-mfiles-version>
+	<optional>false</optional>
+	<enabled-by-default>true</enabled-by-default>
+	<master-application-guid>0AE95BC7-0565-421C-A40F-3F93742A7FCE</master-application-guid>
+	<modules>
+		<module environment="shellui">
+			<file>json2.js</file>
+			<file>mfilesapi.js</file>
+			<file>mfilesapi.content.js</file>
+			<file>mfilesapi.structure.js</file>
+			<file>smartCard.js</file>
+			<file>shellui.js</file>
+		</module>
+	</modules>
+</application>
